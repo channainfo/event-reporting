@@ -1,0 +1,34 @@
+<div ng-controller="SignInController as signInCtrl" id="signInForm" flex layout="row">
+  <div layout="column" flex>
+    <div flex="80" layout="row" layout-wrap id="signInWithEmail">
+      <div flex="100" layout="row" layout-wrap class="signInFormContainer">
+        <md-input-container flex="100" class="signInInput">
+          <label id="signInEmailLabel">Email or Mobile</label>
+          <input type="text" id="txtSignInEmail" ng-model="signInCtrl.loginEmailMobile">
+        </md-input-container>
+        <md-input-container flex="100" class="signInInput">
+           <label id="signInPasswordLabel">Password</label>
+           <input type="password" id="txtSignInPassword" ng-model="signInCtrl.loginPassword">
+        </md-input-container>
+      </div>
+      <div flex="100" id="buttonLoginContainer">
+        <md-button class="md-raised md-primary bold-text" id="btnLogin">LOGIN</md-button>
+      </div>
+    </div>
+
+    <div flex="10" id="signInWithFacebook">
+      <div layout="row" layout-wrap>
+        <div flex="100" id="buttonLoginViaFbContainer">
+          <md-button class="md-raised md-accent" id="btnLoginWithFb">
+            <i class="fa fa-facebook-official" id="loginWithFbIcon"></i>
+            <span class="bold-text">Sign In via Facebook</span>
+          </md-button>
+        </div>
+        <div flex="100" id="signUpLink">
+          <h5>Not here before? <a ui-sref='main'>Sign Up</a></h5>
+          <div source="apiMeJSON"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

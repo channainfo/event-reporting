@@ -1,0 +1,33 @@
+<div ng-controller="SignUpController as signUpCtrl">
+  <md-content class="padding">
+    <form  name="form" ng-submit="signUpCtrl.login()" role="form" class="boxform" layout="column">
+      <md-input-container class="md-icon-float md-block md_container">
+        <input class="form-control" name="username" aria-label="username">
+        <label class="text_label_register" name="namemail">Enter your username address</label>
+      </md-input-container>
+    
+      <md-input-container class="md-icon-float md-block md_container">
+        <input class="form-control" name="phone" aria-label="phone">
+        <label class="text_label_register" name="namemail">Enter your mobile number</label>
+      </md-input-container>
+
+      <md-input-container flex="100" id="so" class="md_container">
+         <input type="password" class="form-control" id="password" aria-label="password" name="password">
+         <label class="text_label_register" name="namepass" ng-modeyl>Password</label>
+      </md-input-container >
+      <div layout="column" class="form-actions">
+        <md-button type="" class="md-register">Register</md-button>
+      </div>
+    </form>
+    <div layout="column" class="button_register">
+      <md-button class="md-facebook">
+        <i class="fa fa-facebook-square font-size-i"></i>Register with Facebook
+      </md-button>
+      <a ui-sref="sign_in" class="tag_a"><md-button class="md-signin">SignIn with Email</md-button></a>
+    </div>
+    <h6 class="text_register_h6">By signing up, you agree to our
+      <a href="" class="text_register_a">Terms of Use</a>and
+      <a href="" class="text_register_a"> Privacy Policy.</a>
+    </h6>
+  </md-content>
+</div>

@@ -1,41 +1,47 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<html ng-app="bookmebus">
+  <head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 
-    http://www.apache.org/licenses/LICENSE-2.0
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="bower_components/material-design-icons/iconfont/material-icons.css">
+    <!-- International phone number -->
+    <link rel="stylesheet" type="text/css" href="bower_components/intl-tel-input/build/css/intlTelInput.css"/>
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/sign_up/sign_up.css"/>
+  </head>
+
+  <body ng-cloak>
+    <div ui-view > </div>
+
+    <!-- Angular Material requires Angular.js Libraries install with bower -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/intl-tel-input/build/js/intlTelInput.js"></script>
+    <script src="bower_components/intl-tel-input/lib/libphonenumber/build/utils.js"></script>
+    <script src="bower_components/international-phone-number/releases/international-phone-number.js"></script>
+
+    <!-- module -->
+    <script type="text/javascript" src="js/cordova_angular_event.js"></script>
+    <script type="text/javascript" src="js/bookmebus_module.js"></script>
+
+    <!-- Config file -->
+    <script type="text/javascript" src="js/config/routes_config.js"></script>
+    <script type="text/javascript" src="js/config/theme_config.js"></script>
+
+    <!-- Custom service (module, service, controller, config) -->
+    <script type="text/javascript" src="js/services/api_config_service.js"></script>
+    <script type="text/javascript" src="js/services/access_token_service.js"></script>
+    <script type="text/javascript" src="js/services/store_service.js"></script>
+
+    <!-- Custom Javascript (module, service, controller, config) -->
+    <script type="text/javascript" src="js/app/sign_up/sign_up_controller.js"></script>
+  </body>
+
 </html>
