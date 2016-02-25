@@ -1,29 +1,26 @@
 <div ng-controller="SignUpController as signUpCtrl">
   <md-content>
-    <form name="signUpForm" ng-submit="signUpCtrl.signup()" role="form" class="signUpForm">
+    <form name="signUpForm" role="form" class="signUpForm">
       <div id="signup-input-background">
         <md-input-container class="signup-input-container">
-          <input type="email" class="signup-input" name="userEmail" aria-label="userEmail" ng-model="signUpCtrl.userEmail" required>
+          <input type="email" class="signup-input" aria-label="Email" ng-model="signUpCtrl.user.email" required>
           <label class="signUpLabel">Enter your email address</label>
         </md-input-container>
 
         <md-input-container class="signup-input-container">
-          <input class="signup-input" name="userName" aria-label="userName" ng-model="signUpCtrl.userName" required>
-          <label class="signUpLabel">Enter user name</label>
+          <input type="text" international-phone-number default-country="kh" class="signup-input"
+                 ng-model="signUpCtrl.user.mobile_phone" aria-label="Mobile Phone" required>
         </md-input-container>
 
         <md-input-container class="signup-input-container">
-          <input type="text" international-phone-number default-country="kh" ng-model="signUpCtrl.userMobile" aria-label="userMobile"
-          class="signup-input" name="userMobile" required>
-        </md-input-container>
-
-        <md-input-container class="signup-input-container">
-          <input type="password" class="signup-input" ng-model="signUpCtrl.userPassword" aria-label="userPassword" name="userPassword" required ng-minlength="8" ng-maxlength="20">
+          <input type="password" class="signup-input" ng-model="signUpCtrl.user.password"
+                 aria-label="User Password" required ng-minlength="8" ng-maxlength="20">
           <label class="signUpLabel">Password</label>
+
         </md-input-container>
       </div>
       <div layout="column">
-        <md-button type="" class="md-raised md-primary boldText whiteText" id="btnRegister">Register</md-button>
+        <md-button ng-click='signUpCtrl.signup()' class="md-raised md-primary boldText whiteText" >Register</md-button>
       </div>
     </form>
 

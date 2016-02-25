@@ -1,7 +1,8 @@
 (function(){
   var signUpController = function(SignUpUser){
+    this.user = {}
     this.signup = function(){
-      SignUpUser.setUserData(this.userEmail, this.userMobile, this.userPassword, this.userName)
+      SignUpUser.setUserData(this.user)
     }
   }
 
