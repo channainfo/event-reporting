@@ -24,6 +24,13 @@
         return this.getAppToken() != null ? true : false
       },
 
+      getRequestHeader: function(){
+        return {
+                  Accept: 'application/json',
+                  Authorization: 'Bearer ' + Store.getObject('app_token').access_token
+               }
+      },
+
       //private:
       _authorizeApp: function(success, failed){
         var self = this

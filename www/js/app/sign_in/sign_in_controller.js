@@ -1,8 +1,11 @@
 (function(){
-  var signInController = function(){
+  var signInController = function(SignInUser){
+    this.signin = function(){
+      SignInUser.requestUserToken(this.signInUserName, this.signInPassword)
+    }
   }
 
   angular
     .module('bookmebus')
-    .controller('SignInController', signInController)
+    .controller('SignInController', ['SignInUser', signInController])
 })()

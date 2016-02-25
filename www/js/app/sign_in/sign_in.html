@@ -1,34 +1,30 @@
-<div ng-controller="SignInController as signInCtrl" id="signInForm" flex layout="row">
-  <div layout="column" flex>
-    <div flex="80" layout="row" layout-wrap id="signInWithEmail">
-      <div flex="100" layout="row" layout-wrap class="signInFormContainer">
-        <md-input-container flex="100" class="signInInput">
-          <label id="signInEmailLabel">Email or Mobile</label>
-          <input type="text" id="txtSignInEmail" ng-model="signInCtrl.loginEmailMobile">
+<div ng-controller="SignInController as signInCtrl">
+  <md-content>
+    <form name="signInForm" role="form" class="signInForm">
+      <div id="signin-input-background">
+        <md-input-container class="signin-input-container">
+          <input type="text" class="signin-input" ng-model="signInCtrl.signInUserName" aria-label="signin-username">
+          <label>Enter your username</label>
         </md-input-container>
-        <md-input-container flex="100" class="signInInput">
-           <label id="signInPasswordLabel">Password</label>
-           <input type="password" id="txtSignInPassword" ng-model="signInCtrl.loginPassword">
-        </md-input-container>
-      </div>
-      <div flex="100" id="buttonLoginContainer">
-        <md-button class="md-raised md-primary bold-text" id="btnLogin">LOGIN</md-button>
-      </div>
-    </div>
 
-    <div flex="10" id="signInWithFacebook">
-      <div layout="row" layout-wrap>
-        <div flex="100" id="buttonLoginViaFbContainer">
-          <md-button class="md-raised md-accent" id="btnLoginWithFb">
-            <i class="fa fa-facebook-official" id="loginWithFbIcon"></i>
-            <span class="bold-text">Sign In via Facebook</span>
-          </md-button>
-        </div>
-        <div flex="100" id="signUpLink">
-          <h5>Not here before? <a ui-sref='sign_up'>Sign Up</a></h5>
-          <div source="apiMeJSON"></div>
-        </div>
+        <md-input-container flex="100" class="signin-input-container">
+           <input type="password" class="signin-input" ng-model="signInCtrl.signInPassword" aria-label="signin-password">
+           <label>Enter your Password</label>
+        </md-input-container>
       </div>
+
+      <div layout="column">
+        <md-button class="md-raised md-primary boldText whiteText" id="btnSignIn" ng-click="signInCtrl.signin()">LOGIN</md-button>
+      </div>
+    </form>
+
+    <div layout="column" class="signin-signup-bottom-button">
+      <md-button id="btnSignInViaFb" class="md-raised whiteText boldText">
+        <ng-md-icon icon="facebook-box" id="fbSignUpIcon"></ng-md-icon> Sign in via Facebook
+      </md-button>
+      <h5>Not here before? 
+        <a ui-sref="sign_up">Sign Up</a>
+      </h5>
     </div>
-  </div>
+  </md-content>
 </div>

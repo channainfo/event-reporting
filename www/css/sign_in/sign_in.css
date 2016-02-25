@@ -1,82 +1,35 @@
-#signInForm{
-  padding: 0px;
-}
-
-#signInWithEmail{
-  /*background: url('../../img/destinations/cambodia_island.JPG') no-repeat;*/
+.signInForm{
+  background: url('../../img/destinations/cambodia_island.JPG') no-repeat;
   background-size: cover;
-  padding: 20px ;
-  padding-bottom: 25%;
+  padding: 60px 24px 35px 24px;
 }
 
-#signInEmailLabel, #signInPasswordLabel{
-  color: black;
-}
-
-#signInWithFacebook{
-  background: white;
-}
-
-#btnLogin, #btnLoginWithFb{
-  color: white;
-  width: 100%;
-}
-
-#buttonLoginContainer{
-  padding-right: 15px;
-}
-
-#btnLogin{
-  margin-top: 30px;
-}
-
-#buttonLoginViaFbContainer{
-  padding: 0px 35px 0px 17px;
-}
-
-#btnLoginWithFb{
-  margin-top: 60px;
-}
-
-#loginWithFbIcon{
-  font-size: 20px;
-  margin-right: 15px;
-}
-
-#signInOrContainer{
-  position: relative;
-  border-top: 1px solid #B3AEAE;
-  margin-top: 20px;
-  text-align: center;
-}
-
-#signInOrLine{
-  color: #B3AEAE;
-  background-color: #fff;
-  position: relative;
-  top: -14px;
+#signin-input-background{
   width: auto;
-  padding: 0px 10px 0px 10px;
-  font-weight: bold;
-  font-size: 18px;
-  margin-left: -18px;
-}
-
-.signInFormContainer{
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
-  padding: 0px 15px 20px 15px;
+  padding: 0px 20px 12px 20px;
+}
+
+.signin-input-container{
+  width: 100%;
+  height: 30px;
+}
+
+.signin-input{
+  border-color: #333 !important;
+}
+
+#btnSignIn{
   margin-top: 50px;
 }
 
-.signInInput{
-  height: 15px;
-}
-
-#signUpLink{
+#signInWithFacebook{
   text-align: center;
 }
 
-#signUpLink a{
-  color: #009901;
+#btnSignInViaFb{
+  background-color: #3D5B99;
+  width: 100%;
+  margin-top: 50px;
 }

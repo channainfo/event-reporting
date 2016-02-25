@@ -1,36 +1,39 @@
 <div ng-controller="SignUpController as signUpCtrl">
-  <md-content class="padding">
-    <form  name="form" ng-submit="signUpCtrl.login()" role="form" class="boxform" layout="column">
-      <md-input-container class="md-icon-float md-block md_container">
-        <input class="form-control" name="username" aria-label="username">
-        <label class="text_label_register" name="namemail">Enter your username address</label>
-      </md-input-container>
+  <md-content>
+    <form name="signUpForm" ng-submit="signUpCtrl.signup()" role="form" class="signUpForm">
+      <div id="signup-input-background">
+        <md-input-container class="signup-input-container">
+          <input type="email" class="signup-input" name="userEmail" aria-label="userEmail" ng-model="signUpCtrl.userEmail" required>
+          <label class="signUpLabel">Enter your email address</label>
+        </md-input-container>
 
-      <md-input-container class="md-icon-float md-block md_container">
-        <input class="form-control" name="phone" aria-label="phone">
-        <label class="text_label_register" name="namemail">Enter your mobile number</label>
-      </md-input-container>
+        <md-input-container class="signup-input-container">
+          <input class="signup-input" name="userName" aria-label="userName" ng-model="signUpCtrl.userName" required>
+          <label class="signUpLabel">Enter user name</label>
+        </md-input-container>
 
-      <md-input-container flex="100" id="so" class="md_container">
-         <input type="password" class="form-control" id="password" aria-label="password" name="password">
-         <label class="text_label_register" name="namepass" ng-modeyl>Password</label>
-      </md-input-container >
+        <md-input-container class="signup-input-container">
+          <input type="text" international-phone-number default-country="kh" ng-model="signUpCtrl.userMobile" aria-label="userMobile"
+          class="signup-input" name="userMobile" required>
+        </md-input-container>
 
-      <div layout="column" class="form-actions">
-        <md-button type="" class="md-register">Register</md-button>
+        <md-input-container class="signup-input-container">
+          <input type="password" class="signup-input" ng-model="signUpCtrl.userPassword" aria-label="userPassword" name="userPassword" required ng-minlength="8" ng-maxlength="20">
+          <label class="signUpLabel">Password</label>
+        </md-input-container>
+      </div>
+      <div layout="column">
+        <md-button type="" class="md-raised md-primary boldText whiteText" id="btnRegister">Register</md-button>
       </div>
     </form>
-    <div layout="column" class="button_register">
-      <md-button class="md-facebook">
-        <i class="fa fa-facebook-square font-size-i"></i>Register with Facebook
+
+    <div layout="column" class="signin-signup-bottom-button">
+      <md-button id="btnSignUpViaFb" class="md-raised whiteText boldText">
+        <ng-md-icon icon="facebook-box" id="fbSignUpIcon"></ng-md-icon> Register with Facebook
       </md-button>
       <a ui-sref="sign_in" class="tag_a">
-        <md-button class="md-signin">Sign in</md-button>
+        <md-button id="btnLinkToSignIn" class="md-raised whiteText boldText">Sign in</md-button>
       </a>
     </div>
-    <h6 class="text_register_h6">By signing up, you agree to our
-      <a href="" class="text_register_a">Terms of Use</a>and
-      <a href="" class="text_register_a"> Privacy Policy.</a>
-    </h6>
   </md-content>
 </div>

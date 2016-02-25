@@ -1,10 +1,10 @@
 (function(){
-  var signUpController = function(AccessToken){
-    this.login = function(){
-      AccessToken.setAppToken();
+  var signUpController = function(SignUpUser){
+    this.signup = function(){
+      SignUpUser.setUserData(this.userEmail, this.userMobile, this.userPassword, this.userName)
     }
   }
 
   angular.module('bookmebus')
-         .controller('SignUpController', ['AccessToken', signUpController])
+         .controller('SignUpController', ['SignUpUser', signUpController])
 })()
