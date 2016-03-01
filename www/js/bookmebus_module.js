@@ -1,1 +1,1 @@
-angular.module("bookmebus", ["cordovaAngularEvent", "ngMaterial", "ngMessages", "ui.router", "internationalPhoneNumber", "ngMdIcons"]);
+angular.module("bookmebus", ["cordovaAngularEvent", "ngMaterial", "ngMessages", "ui.router", "internationalPhoneNumber", "ngMdIcons", "ezfb"]);
