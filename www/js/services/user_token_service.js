@@ -6,15 +6,6 @@
         return this.isSetUserToken()
       },
 
-      signInUser: function(userParams, success, failed){
-        if(this.isSignedIn()){
-          var userToken = Store.getObject(this._name)
-          success(userToken)
-          return;
-        }
-        this._authenticateUser(userParams, success, failed)
-      },
-
       signOutUser: function(userParams) {
         Store.clear(this._name)
       },
@@ -27,8 +18,7 @@
         return this.getUserToken() != null ? true : false
       },
 
-      //private:
-      _authenticateUser: function(userParams, success, failed){
+      signInUser: function(userParams, success, failed){
         var data = { grant_type: 'password',
                      client_id: ApiConfig.CLIENT_ID,
                      client_secret: ApiConfig.CLIENT_SECRET
@@ -41,6 +31,7 @@
           data.fb_access_token = userParams.fb_access_token
 
         var self = this
+
         $http({
           method: 'POST',
           url: ApiConfig.url('/oauth/token'),
@@ -53,7 +44,7 @@
          }, function (response) {
             failed(response.data)
         });
-      },
+      }
     }
   }
 

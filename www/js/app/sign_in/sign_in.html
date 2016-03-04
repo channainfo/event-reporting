@@ -2,19 +2,25 @@
   <md-content>
     <form name="signInForm" role="form" class="signInForm">
       <div class="signin-input-background">
+        <div style="width: 100%;padding: 10px 0 0;text-transform: uppercase;">
+          <span ng-show="signInCtrl.hasError()" class="error">
+            <ng-md-icon icon="error"></ng-md-icon>
+            <span style="padding-left: 5px;">Invalid email/password</span>
+          </span>
+        </div>
         <md-input-container class="signin-input-container">
-          <input type="text" class="signin-input" ng-model="signInCtrl.signInUserName" aria-label="signin-username">
+          <input ng-model="signInCtrl.user.username" type="email" class="signin-input" aria-label="signin-username">
           <label>Enter your username</label>
         </md-input-container>
 
         <md-input-container flex="100" class="signin-input-container">
-           <input type="password" class="signin-input" ng-model="signInCtrl.signInPassword" aria-label="signin-password">
+           <input ng-model="signInCtrl.user.password" type="password" class="signin-input" aria-label="signin-password">
            <label>Enter your Password</label>
         </md-input-container>
       </div>
 
       <div layout="column">
-        <md-button class="md-raised md-primary boldText whiteText square-border btnSignIn" ng-click="signInCtrl.signin()">
+        <md-button ng-click="signInCtrl.signin()" class="md-raised md-primary boldText whiteText square-border btnSignIn">
           LOGIN
         </md-button>
       </div>
