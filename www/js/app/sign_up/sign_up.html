@@ -1,36 +1,57 @@
 <div ng-controller="SignUpController as signUpCtrl">
   <md-content>
     <form name="signUpForm" role="form" class="signUpForm">
-      <div id="signup-input-background">
+      <div class="signup-input-background">
+
+        <div>
+          <md-tooltip md-visible="signUpCtrl.showToolTip" md-direction="top" class="fbSignUpMessage">
+            Please fill in other fields to complete your registration!
+          </md-tooltip>
+        </div>
+
         <md-input-container class="signup-input-container">
-          <input type="email" class="signup-input" aria-label="Email" ng-model="signUpCtrl.user.email" required>
+          <input ng-model="signUpCtrl.user.email" type="email" class="signup-input" name="email" aria-label="Email" required>
           <label class="signUpLabel">Enter your email address</label>
+          <span class="error" ng-show="signUpCtrl.fieldError('email')">
+            {{ signUpCtrl.fieldError('email') }}
+          </span>
+
+
         </md-input-container>
 
         <md-input-container class="signup-input-container">
-          <input type="text" international-phone-number default-country="kh" class="signup-input"
-                 ng-model="signUpCtrl.user.mobile_phone" aria-label="Mobile Phone" required>
+          <input ng-model="signUpCtrl.user.mobile_phone" type="text" international-phone-number default-country="kh" 
+                 class="signup-input" name="mobile" aria-label="Mobile Phone" required >
         </md-input-container>
 
         <md-input-container class="signup-input-container">
-          <input type="password" class="signup-input" ng-model="signUpCtrl.user.password"
-                 aria-label="User Password" required ng-minlength="8" ng-maxlength="20">
+          <input ng-model="signUpCtrl.user.password" type="password" class="signup-input" name="password"
+                 aria-label="User Password" required >
           <label class="signUpLabel">Password</label>
+          <span class="error" ng-show="signUpCtrl.fieldError('password')">
+            {{ signUpCtrl.fieldError('password') }}
+          </span>
 
         </md-input-container>
+
       </div>
       <div layout="column">
-        <md-button ng-click='signUpCtrl.signup()' class="md-raised md-primary boldText whiteText" >Register</md-button>
+        <md-button ng-click='signUpCtrl.signup()' class="md-raised md-primary boldText whiteText square-border" >Register</md-button>
       </div>
     </form>
 
-    <div layout="column" class="signin-signup-bottom-button">
-      <md-button id="btnSignUpViaFb" class="md-raised whiteText boldText">
-        <ng-md-icon icon="facebook-box" id="fbSignUpIcon"></ng-md-icon> Register with Facebook
+    <div layout="column" class="signup-bottom-button">
+      <md-button ng-show="!signUpCtrl.user.fb_access_token" class="md-raised whiteText boldText btnSignUpViaFb square-border"
+                 ng-click="signUpCtrl.signUpViaFb()">
+        <ng-md-icon icon="facebook-box" class="fbIcon"></ng-md-icon> Register with Facebook
       </md-button>
-      <a ui-sref="sign_in" class="tag_a">
-        <md-button id="btnLinkToSignIn" class="md-raised whiteText boldText">Sign in</md-button>
-      </a>
+
+      <div class="signin-signup-link">
+        Already member? 
+        <a ui-sref="sign_in" class="tag_a">
+          Sign in
+        </a>
+      </div>
     </div>
   </md-content>
 </div>

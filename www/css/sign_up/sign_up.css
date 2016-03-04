@@ -4,11 +4,13 @@
   padding: 10px 24px 35px 24px;
 }
 
-#signup-input-background{
+.signup-input-background{
   width: auto;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
-  padding: 0px 20px 12px 20px;
+  padding: 0px 20px 20px 20px;
+  margin-bottom: 15px;
+  margin-top: 27px;
 }
 
 .signup-input-container{
@@ -25,27 +27,9 @@
   color: #333;
 }
 
-#btnRegister{
-  margin-top: 30px;
-  margin-right: 7px;
-  margin-left: 4px;
-}
-
-#btnSignUpViaFb{
-  background-color: #3D5B99;
+.btnSignUpViaFb{
+  background-color: #3D5B99 !important;
   width: 100%;
-}
-#fbSignUpIcon{
-  margin-right: 15px;
-}
-
-#btnLinkToSignIn{
-  background-color: #E20808;
-  width: 100%;
-}
-
-#btnRegister, #btnSignUpViaFb, #btnLinkToSignIn{
-  border-radius: 0px;
 }
 
 .signUpNotice{
@@ -57,4 +41,16 @@
 
 .intl-tel-input{
   width: 100%;
+}
+
+.signup-bottom-button{
+  margin-top: 30px;
+  padding-left:24px;
+  padding-right: 40px;
+  text-align: center;
+}
+
+.fbSignUpMessage{
+  font-size: 12px;
+  margin: 0 auto;
 }

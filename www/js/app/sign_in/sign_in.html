@@ -1,7 +1,7 @@
 <div ng-controller="SignInController as signInCtrl">
   <md-content>
     <form name="signInForm" role="form" class="signInForm">
-      <div id="signin-input-background">
+      <div class="signin-input-background">
         <md-input-container class="signin-input-container">
           <input type="text" class="signin-input" ng-model="signInCtrl.signInUserName" aria-label="signin-username">
           <label>Enter your username</label>
@@ -14,17 +14,19 @@
       </div>
 
       <div layout="column">
-        <md-button class="md-raised md-primary boldText whiteText" id="btnSignIn" ng-click="signInCtrl.signin()">LOGIN</md-button>
+        <md-button class="md-raised md-primary boldText whiteText square-border btnSignIn" ng-click="signInCtrl.signin()">
+          LOGIN
+        </md-button>
       </div>
     </form>
 
-    <div layout="column" class="signin-signup-bottom-button">
-      <md-button id="btnSignInViaFb" class="md-raised whiteText boldText">
-        <ng-md-icon icon="facebook-box" id="fbSignUpIcon"></ng-md-icon> Sign in via Facebook
+    <div layout="column" class="signin-bottom-button">
+      <md-button class="md-raised whiteText boldText square-border btnSignInViaFb">
+        <ng-md-icon icon="facebook-box" class="fbIcon"></ng-md-icon> Sign in via Facebook
       </md-button>
-      <h5>Not here before? 
+      <div class="signin-signup-link">Not here before? 
         <a ui-sref="sign_up">Sign Up</a>
-      </h5>
+      </div>
     </div>
   </md-content>
 </div>
