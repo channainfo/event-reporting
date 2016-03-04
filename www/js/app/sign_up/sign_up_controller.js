@@ -5,7 +5,7 @@
     self.error = {}
 
     this.signupFb = function(){
-      FbConnect.fbToken(this.fbConnectSuccess)
+      FbConnect.fbData(this.fbConnectSuccess)
     }
 
     this.fbConnectSuccess = function(fbData){
