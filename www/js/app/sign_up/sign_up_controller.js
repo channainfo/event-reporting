@@ -1,8 +1,20 @@
 (function(){
-  var signUpController = function($state, Registration){
+  var signUpController = function($state, Registration, FbConnect){
     var self = this
     self.user = {}
     self.error = {}
+
+    this.signupFb = function(){
+      FbConnect.fbToken(this.fbConnectSuccess)
+    }
+
+    this.fbConnectSuccess = function(fbData){
+      self.user = {}
+      self.user["email"] = fbData["email"]
+      self.user["fb_access_token"] = fbData["accessToken"]
+      self.user["first_name"] = fbData["first_name"]
+      self.user["last_name"] = fbData["last_name"]
+    }
 
     this.signup = function(){
       Registration.create(self.user, self.registrationSuccess, self.registrationFailed)
@@ -26,5 +38,5 @@
   }
 
   angular.module('bookmebus')
-         .controller('SignUpController', ['$state', 'Registration', signUpController])
+         .controller('SignUpController', ['$state', 'Registration', 'FbConnect', signUpController])
 })()

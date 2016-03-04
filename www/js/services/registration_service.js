@@ -16,17 +16,6 @@
           var error = response.data
           failed(error)
         })
-      },
-      getFbUserData: function(){
-        ezfb.login(function(res) {
-          if(res.authResponse) {
-            var fb_token = res.authResponse.accessToken
-            Store.setObject('fb_access_token', fb_token)
-            ezfb.api('/me', function(response){
-              Store.setObject('fb_user_data', response)
-            })
-          }
-        }, {scope: 'email,user_likes'})
       }
     }
   }
