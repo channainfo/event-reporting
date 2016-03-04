@@ -1,7 +1,7 @@
 (function(){
   var fbConnect = function(ezfb){
     return {
-      fbToken: function(success){
+      fbData: function(success){
         ezfb.login(function(res) {
           if(res.authResponse) {
             var accessToken = res.authResponse.accessToken
@@ -12,6 +12,15 @@
             })
           }
         }, {scope: 'email, public_profile'})
+      },
+
+      fbToken: function(success){
+        ezfb.login(function(res) {
+          if(res.authResponse) {
+            var accessToken = res.authResponse.accessToken
+            success(accessToken)
+          }
+        })
       }
     }
   }
