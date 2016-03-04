@@ -8,6 +8,13 @@
       FbConnect.fbData(this.fbConnectSuccess)
     }
 
+    this.fbConnected = function(){
+      if(self.user["fb_access_token"] != undefined && self.user["fb_access_token"] != '')
+        return true
+
+      return false
+    }
+
     this.fbConnectSuccess = function(fbData){
       self.user = {}
       self.user["email"] = fbData["email"]
