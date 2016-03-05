@@ -1,8 +1,8 @@
-.whiteText{
+.white-text{
   color: white !important;
 }
 
-.boldText{
+.bold-text{
   font-weight: bold;
 }
 
@@ -28,4 +28,8 @@
 .error{
   color: red;
   font-size: 90%;
+}
+
+.dark-text{
+  color: #333;
 }

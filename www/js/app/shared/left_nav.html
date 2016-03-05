@@ -1,0 +1,37 @@
+<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="navigationMenu">
+  <md-toolbar class="side-nav-logo-container">
+    <a ui-sref="main"><img src="img/bookmebus@100x100.jpg" class="side-nav-logo"/></a>
+  </md-toolbar>
+
+  <md-content flex>
+    <md-list>
+      <md-list-item md-ink-ripple>
+        <a class="dark-text">Bus Operators</a>
+      </md-list-item>
+      <md-list-item md-ink-ripple>
+        <a ui-sref='sign_in' class="dark-text">Sign In</a>
+      </md-list-item>
+      <md-list-item md-ink-ripple>
+        <a ui-sref='main.my_account'class="dark-text">My Account</a>
+      </md-list-item>
+      <md-list-item md-ink-ripple>
+        <a class="dark-text">Reschedule Ticket</a>
+      </md-list-item>
+      <md-list-item md-ink-ripple>
+        <a ui-sref='main.coupon' class="dark-text">Coupon</a>
+      </md-list-item>
+      <md-list-item md-ink-ripple>
+        <a class="dark-text">Referral Earning</a>
+      </md-list-item>
+      <md-list-item md-ink-ripple>
+        <a class="dark-text">FAQs</a>
+      </md-list-item>
+      <md-list-item md-ink-ripple>
+        <a class="dark-text">About Us</a>
+      </md-list-item>
+      <md-list-item md-ink-ripple>
+        <a ng-click="mainCtrl.signOut()" class="dark-text">Sign Out</a>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</md-sidenav>

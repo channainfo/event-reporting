@@ -1,7 +1,7 @@
-.signInForm{
+.signin-form{
   background: url('../../img/destinations/cambodia_island.JPG') no-repeat;
   background-size: cover;
-  padding: 60px 24px 35px 24px;
+  padding: 60px 24px 30px 24px;
 }
 
 .signin-input-background{
@@ -28,15 +28,19 @@
   text-align: center;
 }
 
-.btnSignInViaFb{
+.button-signin-via-fb{
   background-color: #3D5B99 !important;
   width: 100%;
   margin-top: 50px;
 }
 
 .signin-bottom-button{
-  margin-top: 8px;
+  margin-top: 5px;
   padding-left:24px;
   padding-right: 40px;
   text-align: center;
+}
+
+.forget-password-link{
+  margin-top: 10px;
 }

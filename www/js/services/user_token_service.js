@@ -6,7 +6,7 @@
         return this.isSetUserToken()
       },
 
-      signOutUser: function(userParams) {
+      destroy: function() {
         Store.clear(this._name)
       },
 

@@ -1,5 +1,5 @@
 (function(){
-  var signUpController = function($state, Registration, FbConnect){
+  var registrationController = function($state, Registration, FbConnect){
     var self = this
     self.user = {}
     self.error = {}
@@ -45,5 +45,5 @@
   }
 
   angular.module('bookmebus')
-         .controller('SignUpController', ['$state', 'Registration', 'FbConnect', signUpController])
+         .controller('RegistrationController', ['$state', 'Registration', 'FbConnect', registrationController])
 })()

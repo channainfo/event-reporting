@@ -1,6 +1,7 @@
 (function(){
-  var applicationController = function(AccessToken){
+  var applicationController = function(AccessToken, Flash){
     this.init = function(){
+      Flash.reset()
       AccessToken.setAppToken('app_token')
     }
   }

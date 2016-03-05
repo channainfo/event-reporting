@@ -8,14 +8,19 @@
         templateUrl: "js/app/main/main.html",
         publicAccess: false
       })
-      .state('sign_up', {
-        url: "/sign_up",
-        templateUrl: "js/app/sign_up/sign_up.html",
+      .state('registration', {
+        url: "/registration",
+        templateUrl: "js/app/registration/registration.html",
         publicAccess: true
       })
       .state('sign_in', {
         url: "/sign_in",
         templateUrl: "js/app/sign_in/sign_in.html",
+        publicAccess: true
+      })
+      .state('forget_password', {
+        url: '/forget_password',
+        templateUrl: 'js/app/forget_password/forget_password.html',
         publicAccess: true
       })
   }

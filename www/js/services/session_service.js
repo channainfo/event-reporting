@@ -3,6 +3,10 @@
     return {
       create: function(userParams, success, failed){
         UserToken.signInUser(userParams, success, failed)
+      },
+
+      destroy: function(){
+        UserToken.destroy()
       }
     }
   }

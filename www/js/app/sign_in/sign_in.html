@@ -1,6 +1,6 @@
 <div ng-controller="SignInController as signInCtrl">
   <md-content>
-    <form name="signInForm" role="form" class="signInForm">
+    <form name="signInForm" role="form" class="signin-form">
       <div class="signin-input-background">
         <div style="width: 100%;padding: 10px 0 0;text-transform: uppercase;">
           <span ng-show="signInCtrl.hasError()" class="error">
@@ -14,24 +14,31 @@
         </md-input-container>
 
         <md-input-container flex="100" class="signin-input-container">
-           <input ng-model="signInCtrl.user.password" type="password" class="signin-input" aria-label="signin-password">
+           <input ng-model="signInCtrl.user.password" type="password" class="signin-input"
+                  aria-label="signin-password" autocomplete="off">
            <label>Enter your Password</label>
         </md-input-container>
       </div>
 
       <div layout="column">
-        <md-button ng-click="signInCtrl.signin()" class="md-raised md-primary boldText whiteText square-border btnSignIn">
+        <md-button ng-click="signInCtrl.signin()" class="md-raised md-primary bold-text white-text square-border btnSignIn">
           LOGIN
         </md-button>
       </div>
     </form>
 
     <div layout="column" class="signin-bottom-button">
-      <md-button ng-click="signInCtrl.signInFb()" class="md-raised whiteText boldText square-border btnSignInViaFb">
+      <md-button ng-click="signInCtrl.signInFb()" class="md-raised white-text bold-text square-border button-signin-via-fb">
         <ng-md-icon icon="facebook-box" class="fbIcon"></ng-md-icon> Sign in via Facebook
       </md-button>
-      <div class="signin-signup-link">Not here before? 
-        <a ui-sref="sign_up">Sign Up</a>
+
+      <div>
+        <p> Not here before? <a ui-sref="registration">Sign Up</a> </p>
+
+        <p>
+          Could not log in ! <a ui-sref="forget_password">Lost your password?</a>
+        </p>
+
       </div>
     </div>
   </md-content>

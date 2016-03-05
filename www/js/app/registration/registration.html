@@ -1,0 +1,50 @@
+<div ng-controller="RegistrationController as registrationCtrl">
+  <md-content>
+    <form name="signUpForm" role="form" class="signUpForm">
+      <div class="signup-input-background">
+        <md-input-container class="signup-input-container">
+          <input ng-model="registrationCtrl.user.email" type="email" class="signup-input" name="email" aria-label="Email" required>
+          <label class="signUpLabel">Enter your email address</label>
+          <span class="error" ng-show="registrationCtrl.fieldError('email')">
+            {{ registrationCtrl.fieldError('email') }}
+          </span>
+        </md-input-container>
+
+        <md-input-container class="signup-input-container">
+          <input ng-model="registrationCtrl.user.mobile_phone" type="text" international-phone-number default-country="kh" 
+                 class="signup-input" name="mobile" aria-label="Mobile Phone" required >
+        </md-input-container>
+
+        <md-input-container class="signup-input-container">
+          <input ng-model="registrationCtrl.user.password" type="password" class="signup-input" name="password"
+                 aria-label="User Password" required >
+          <label class="signUpLabel">Password</label>
+          <span class="error" ng-show="registrationCtrl.fieldError('password')">
+            {{ registrationCtrl.fieldError('password') }}
+          </span>
+
+        </md-input-container>
+
+      </div>
+      <div layout="column">
+        <md-button ng-click='registrationCtrl.signup()' class="md-raised md-primary bold-text white-text square-border" >
+          Register
+        </md-button>
+      </div>
+    </form>
+
+    <div layout="column" class="signup-bottom-button">
+      <md-button ng-hide="registrationCtrl.fbConnected()" class="md-raised white-text bold-text btnSignUpViaFb square-border"
+                 ng-click="registrationCtrl.signupFb()">
+        <ng-md-icon icon="facebook-box" class="fbIcon"></ng-md-icon> Register with Facebook
+      </md-button>
+
+      <div class="signin-signup-link">
+        Already member? 
+        <a ui-sref="sign_in" class="tag_a">
+          Sign in
+        </a>
+      </div>
+    </div>
+  </md-content>
+</div>

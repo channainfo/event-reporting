@@ -9,7 +9,7 @@
                 return localStorage[name]
               },
               clear: function(name){
-                localStorage[name] = '{}'
+                localStorage.clear(name)
               },
               isSet: function(name){
                 return localStorage[name] != undefined
