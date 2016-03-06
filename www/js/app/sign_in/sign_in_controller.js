@@ -1,15 +1,10 @@
 (function(){
-  var signInController = function($state, Session, FbConnect){
+  var signInController = function($state, Session, FbConnect, Flash){
     this.user = {}
-    this.error = false
     var self = this
 
-    this.hasError = function(){
-      return this.error
-    }
-
     this.signInFb = function(){
-      self.error = false
+      Flash.reset()
       FbConnect.fbToken(self.fbTokenSuccess)
     }
 
@@ -20,7 +15,7 @@
     }
 
     this.signin = function(){
-      self.error = false
+      Flash.reset()
       Session.create(self.user, self.signInSuccess, self.signInFailed)
     }
 
@@ -29,12 +24,12 @@
     }
 
     this.signInFailed = function(error){
-      self.error = true
+      Flash.setErrorMessage("Invalid login/password")
     }
 
   }
 
   angular
     .module('bookmebus')
-    .controller('SignInController', ['$state', 'Session', 'FbConnect', signInController])
+    .controller('SignInController', ['$state', 'Session', 'FbConnect', 'Flash', signInController])
 })()

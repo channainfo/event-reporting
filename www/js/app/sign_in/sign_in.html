@@ -2,20 +2,17 @@
   <md-content>
     <form name="signInForm" role="form" class="signin-form">
       <div class="signin-input-background">
-        <div style="width: 100%;padding: 10px 0 0;text-transform: uppercase;">
-          <span ng-show="signInCtrl.hasError()" class="error">
-            <ng-md-icon icon="error"></ng-md-icon>
-            <span style="padding-left: 5px;">Invalid email/password</span>
-          </span>
-        </div>
+        <div class="av-flash"> </div>
+
         <md-input-container class="signin-input-container">
-          <input ng-model="signInCtrl.user.username" type="email" class="signin-input" aria-label="signin-username">
+          <input ng-model="signInCtrl.user.username" class="av-flash-reset signin-input"
+                 type="email"  aria-label="signin-username">
           <label>Enter your username</label>
         </md-input-container>
 
         <md-input-container flex="100" class="signin-input-container">
-           <input ng-model="signInCtrl.user.password" type="password" class="signin-input"
-                  aria-label="signin-password" autocomplete="off">
+           <input ng-model="signInCtrl.user.password" class="av-flash-reset signin-input"
+                  type="password" aria-label="signin-password" autocomplete="off">
            <label>Enter your Password</label>
         </md-input-container>
       </div>
