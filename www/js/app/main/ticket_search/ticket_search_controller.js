@@ -1,11 +1,13 @@
 (function(){
   var ticketSearchController = function(){
-    this.myDate = new Date(Date.now() + (1 * 24 * 60 * 60 * 1000))
-    this.minDate = new Date(
-      this.myDate.getFullYear(),
-      this.myDate.getMonth(),
-      this.myDate.getDate() - 1
-    )
+    this.config = {}
+    this.config.minDate = moment().toDate()
+
+    this.params = {
+      from: '',
+      to: '',
+      on_date: moment().add(1, 'days').toDate()
+    }
   }
 
   angular.module('bookmebus')

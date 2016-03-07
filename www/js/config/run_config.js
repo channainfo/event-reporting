@@ -1,12 +1,24 @@
 (function(){
 
-  var runConfig = function ($rootScope, $state, UserToken) {
+  var runConfig = function ($rootScope, $state, $mdDateLocale, UserToken, ApiConfig) {
+
     $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
       if(!UserToken.isSignedIn() && !toState.publicAccess){
         $state.go('sign_in')
         event.preventDefault()
       }
     })
+
+    $mdDateLocale.formatDate = function(date) {
+       return moment(date).format(ApiConfig.DATE_FORMAT)
+    }
+
+    $mdDateLocale.parseDate = function(dateString) {
+      var m = moment(dateString, ApiConfig.DATE_FORMAT, true)
+      return m.isValid() ? m.toDate() : new Date(NaN)
+    }
+
   }
-  angular.module('bookmebus').run(['$rootScope', '$state', 'UserToken', runConfig ]);
+  angular.module('bookmebus').run(['$rootScope', '$state', '$mdDateLocale',
+                                   'UserToken', 'ApiConfig' ,runConfig ]);
 })()

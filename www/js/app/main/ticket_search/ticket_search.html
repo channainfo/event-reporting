@@ -27,15 +27,15 @@
 
       <md-icon flex="100" class="swap-icon">swap_vertical_circle</md-icon>
 
-      <md-autocomplete flex="100" class="ticket-search-destination" md-selected-item="selectedItem" 
-                       md-search-text="searchDestination" md-items="item in getMatches(searchDestination)" 
+      <md-autocomplete flex="100" class="ticket-search-destination" md-selected-item="selectedItem"
+                       md-search-text="searchDestination" md-items="item in getMatches(searchDestination)"
                        md-item-text="item.display" placeholder="Destination">
         <span md-highlight-text="searchDestination">{{item.display}}</span>
       </md-autocomplete>
     </div>
 
     <div flex="100" class="ticket-search-date">
-      <md-datepicker ng-model="ticketSearchCtrl.myDate" md-min-date="ticketSearchCtrl.minDate" md-placeholder="Enter date">
+      <md-datepicker ng-model="ticketSearchCtrl.params['on_date']" md-min-date="ticketSearchCtrl.config.minDate" md-placeholder="Enter date">
       </md-datepicker>
     </div>
 
