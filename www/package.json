@@ -1,0 +1,33 @@
+{
+  "name": "bookmebus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-uglify": "^1.0.0",
+    "httpserver": "^0.2.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.21",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/langda_chea/avocado_app.git"
+  },
+  "keywords": [
+    "mobile",
+    "hybrid",
+    "environment",
+    "packages"
+  ],
+  "author": "Channa Ly",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/langda_chea/avocado_app#readme"
+}

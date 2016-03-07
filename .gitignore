@@ -2,5 +2,9 @@
 platforms/*
 
 *DS_Store
+
 www/bower_components/*
+www/node_modules/*
+www/js/dist/*
+
 www/js/app_settings.js
