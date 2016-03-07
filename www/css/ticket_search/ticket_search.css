@@ -1,0 +1,67 @@
+.ticket-search-container{
+  margin-top: 20px;
+}
+
+.ticket-search-icon{
+  text-align: left;
+}
+
+.boarding-dropoff-icon{
+  color: grey;
+  font-size: 20px;
+}
+
+.ticket-search-boarding-dropoff-line{
+  border: 1px dashed grey;
+  width: 0px;
+  height: 55px;
+  margin: 0 auto;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 13px;
+  border: 1px dashed grey;
+}
+
+.md-datepicker-input-container {
+  width: 100%;
+  margin-left: 0px;
+}
+
+.md-datepicker-button {
+  margin-left: -10px !important;
+}
+
+.ticket-search-input-container, .ticket-search-button{
+  padding-right: 20px;
+}
+
+.search-boarding-icon{
+  padding-top: 12px;
+}
+
+.search-boarding-icon, .search-dropoff-icon{
+  margin-left: 2px;
+}
+
+.btn-search {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.ticket-search-date {
+  margin-top: -15px;
+  padding-right: 50px;
+}
+
+.swap-icon {
+  font-size: 35px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.ticket-search-destination {
+  margin-bottom: 35px;
+}

@@ -54,3 +54,9 @@
   font-size: 12px;
   margin: 0 auto;
 }
+
+.signin-link{
+  margin-top: 10px;
+  font-size: 15px;
+  padding-bottom: 15px;
+}

@@ -1,0 +1,51 @@
+<div ng-controller="TicketSearchController as ticketSearchCtrl">
+
+   <md-toolbar>
+    <div class="md-toolbar-tools toolbar-top">
+      <a ui-sref="main" class="toolbar-back-button">
+        <ng-md-icon icon="chevron_left" size="35px" class="white-text"></ng-md-icon>
+      </a>
+      <div class="white-text">
+        Search Ticket
+      </div>
+    </div>
+  </md-toolbar>
+
+  <div flex layout="row" layout-padding layout-wrap layout-align="center start" class="ticket-search-container">
+
+    <div flex="10" class="ticket-search-icon">
+      <div class="search-boarding-icon"><ng-md-icon icon="panorama_fisheye" class="boarding-dropoff-icon"></ng-md-icon></div>
+      <div class="ticket-search-boarding-dropoff-line"></div>
+      <div class="search-dropoff-icon"><ng-md-icon icon="lens" class="boarding-dropoff-icon"></ng-md-icon></div>
+    </div>
+
+    <div flex="90" layout="row" layout-wrap class="ticket-search-input-container">
+      <md-autocomplete flex="100" md-selected-item="selectedItem" md-search-text="searchOrigin"
+                       md-items="item in getMatches(searchOrigin)" md-item-text="item.display" placeholder="Origin">
+        <span md-highlight-text="searchOrigin">{{item.display}}</span>
+      </md-autocomplete>
+
+      <md-icon flex="100" class="swap-icon">swap_vertical_circle</md-icon>
+
+      <md-autocomplete flex="100" class="ticket-search-destination" md-selected-item="selectedItem" 
+                       md-search-text="searchDestination" md-items="item in getMatches(searchDestination)" 
+                       md-item-text="item.display" placeholder="Destination">
+        <span md-highlight-text="searchDestination">{{item.display}}</span>
+      </md-autocomplete>
+    </div>
+
+    <div flex="100" class="ticket-search-date">
+      <md-datepicker ng-model="ticketSearchCtrl.myDate" md-min-date="ticketSearchCtrl.minDate" md-placeholder="Enter date">
+      </md-datepicker>
+    </div>
+
+    <div flex="100" class="ticket-search-button">
+      <a ui-sref="search_result">
+        <md-button class="md-raised md-primary white-text bold-text btn-search">
+          <ng-md-icon icon="search" class="white-text"></ng-md-icon>Search
+        </md-button>
+      </a>
+    </div>
+  </div>
+
+</div>
