@@ -1,26 +1,25 @@
 (function(){
-  var registration = function(ApiConfig, AccessToken, ezfb, $http, Store, $state){
+  var registration = function(AccessTokenHttp){
     return {
       create: function(userParams, success, failed){
-        var self = this
-        $http({
+
+        var options = {
           method: 'POST',
-          url: ApiConfig.url('/api/v1/registrations'),
-          headers: AccessToken.getRequestHeader(),
+          url: 'registrations',
           data: userParams
+        }
+
+        AccessTokenHttp.request(options, function(response){
+          success(response.data)
+        }, function(response){
+          failed(response.data)
         })
-        .then(function (response) {
-          var user = response.data
-          success(user)
-        }, function (response) {
-          var error = response.data
-          failed(error)
-        })
+
       }
     }
   }
 
   angular
     .module('bookmebus')
-    .factory('Registration', ['ApiConfig', 'AccessToken', 'ezfb', '$http', 'Store', '$state', registration])
+    .factory('Registration', ['AccessTokenHttp', registration])
 })()

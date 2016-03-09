@@ -1,18 +1,16 @@
 (function(){
-  var forgetPassword = function(ApiConfig, AccessToken, $http, Store){
+  var forgetPassword = function(AccessTokenHttp){
     return {
       create: function(email, success, failed){
-        var data = { email: email }
-
-        $http({
+        var options = {
           method: 'POST',
-          url: ApiConfig.url('/api/v1/forget_passwords'),
-          headers: AccessToken.getRequestHeader(),
-          data: data
-        })
-        .then(function(response){
+          url: 'forget_passwords',
+          data: { email: email }
+        }
+
+        AccessTokenHttp.request(options, function(response){
           success(response.data)
-          }, function(response){
+        }, function(response){
           failed(response.data)
         })
       }
@@ -21,5 +19,5 @@
 
   angular
     .module('bookmebus')
-    .factory('ForgetPassword', ['ApiConfig', 'AccessToken', '$http', 'Store', forgetPassword])
+    .factory('ForgetPassword', ['AccessTokenHttp', forgetPassword])
 })()

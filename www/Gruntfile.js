@@ -12,10 +12,21 @@ module.exports = function(grunt) {
           'js/dist/app.min.js': [originalFiles]
         }
       }
+    },
+
+
+    pkg: grunt.file.readJSON('package.json'),
+    jasmine: {
+      src: ['js/**/*.js'],
+      options: {
+        specs: ['spec/**/*spec.js'],
+        vendor: []
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify')
-  grunt.registerTask('default', ['uglify']);
+  grunt.loadNpmTasks('grunt-contrib-jasmine')
+  grunt.registerTask('default', ['uglify'])
 
 };

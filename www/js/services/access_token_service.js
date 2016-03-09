@@ -8,12 +8,12 @@
           success(oauthToken)
           return;
         }
-        this._authorizeApp(success, failed)
+        this.authorizeApp(success, failed)
       },
 
       revokeAppToken: function(success, failed) {
         Store.clear(this._name)
-        this._authorizeApp(success, failed)
+        this.authorizeApp(success, failed)
       },
 
       getAppToken: function(){
@@ -31,15 +31,14 @@
                }
       },
 
-      //private:
-      _authorizeApp: function(success, failed){
+      authorizeApp: function(success, failed){
         var self = this
         var data = { grant_type: 'client_credentials',
                      client_id: ApiConfig.CLIENT_ID,
                      client_secret: ApiConfig.CLIENT_SECRET }
         $http({
           method: 'POST',
-          url: ApiConfig.url('/oauth/token'),
+          url: ApiConfig.authUrl(),
           data: data,
 
         })

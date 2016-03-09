@@ -1,9 +1,9 @@
 (function(){
   var appController = function(AccessToken, Flash) {
     this.init = function(){
-      console.log("initializing...")
+      avocado.debug.log("initializing...")
       AccessToken.setAppToken(function(oauthToken){
-        console.log("app token", oauthToken)
+        avocado.debug.log("app token", oauthToken)
       })
     },
 

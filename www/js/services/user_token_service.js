@@ -18,6 +18,13 @@
         return this.getUserToken() != null ? true : false
       },
 
+      getRequestHeader: function(){
+        return {
+                  Accept: 'application/json',
+                  Authorization: 'Bearer ' + Store.getObject('user_token').access_token
+               }
+      },
+
       signInUser: function(userParams, success, failed){
         var data = { grant_type: 'password',
                      client_id: ApiConfig.CLIENT_ID,
@@ -34,7 +41,7 @@
 
         $http({
           method: 'POST',
-          url: ApiConfig.url('/oauth/token'),
+          url: ApiConfig.authUrl(),
           data: data,
         })
         .then(function (response) {
