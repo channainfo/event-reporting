@@ -21,6 +21,12 @@
   <body ng-cloak ng-controller='AppController as appCtrl' ng-init='appCtrl.init()'>
     <div ui-view > </div>
 
+    <!-- Lib -->
+    <script type="text/javascript" src="js/lib/avocado.js"></script>
+    <script type="text/javascript" src="js/lib/avocado/env.js"></script>
+    <script type="text/javascript" src="js/lib/avocado/debug.js"></script>
+    <script type="text/javascript" src="js/lib/avocado/location.js"></script>
+
     <!-- Angular Material requires Angular.js Libraries install with bower -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/moment/moment.js"></script>
@@ -37,11 +43,6 @@
     <script src="bower_components/angular-material-icons/angular-material-icons.js"></script>
     <script src="bower_components/angular-easyfb/build/angular-easyfb.min.js"></script>
     <script src="bower_components/angular-moment/angular-moment.min.js"></script>
-
-    <!-- Lib -->
-    <script type="text/javascript" src="js/lib/avocado.js"></script>
-    <script type="text/javascript" src="js/lib/avocado/env.js"></script>
-    <script type="text/javascript" src="js/lib/avocado/debug.js"></script>
 
     <!-- module -->
     <script type="text/javascript" src="js/cordova_angular_event.js"></script>
@@ -73,7 +74,7 @@
     <script type="text/javascript" src="js/services/session_service.js"></script>
     <script type="text/javascript" src="js/services/fb_connect_service.js"></script>
     <script type="text/javascript" src="js/services/forget_password_service.js"></script>
-
+    <script type="text/javascript" src="js/services/location_service.js"></script>
     <script type="text/javascript" src="js/services/flash_service.js"></script>
 
     <!-- Custom Javascript (module, service, controller, config) -->

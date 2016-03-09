@@ -3,11 +3,12 @@
     return {
       _name: 'app_token',
       setAppToken: function(success, failed){
-        if(this.isSetAppToken()){
-          var oauthToken = this.getAppToken()
-          success(oauthToken)
-          return;
-        }
+
+        // if(this.isSetAppToken()){
+        //   var oauthToken = this.getAppToken()
+        //   success(oauthToken)
+        //   return;
+        // }
         this.authorizeApp(success, failed)
       },
 

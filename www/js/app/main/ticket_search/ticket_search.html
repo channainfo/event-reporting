@@ -1,4 +1,4 @@
-<div ng-controller="TicketSearchController as ticketSearchCtrl">
+<div ng-controller="TicketSearchController as search">
 
    <md-toolbar>
     <div class="md-toolbar-tools toolbar-top">
@@ -20,22 +20,52 @@
     </div>
 
     <div flex="90" layout="row" layout-wrap class="ticket-search-input-container">
-      <md-autocomplete flex="100" md-selected-item="selectedItem" md-search-text="searchOrigin"
-                       md-items="item in getMatches(searchOrigin)" md-item-text="item.display" placeholder="Origin">
-        <span md-highlight-text="searchOrigin">{{item.display}}</span>
+      <md-autocomplete md-selected-item="search.selectedOrigin"
+                       md-search-text="search.params.origin"
+                       md-items="origin in search.origins()"
+                       md-item-text="origin.attributes.name"
+                       md-min-length='0'
+                       placeholder="Origin" flex="100">
+        <md-item-template>
+          <span md-highlight-text="searchOrigin">{{origin.attributes.name}}</span>
+        </md-item-template>
+
+        <md-not-found>
+          No matches found.
+        </md-not-found>
       </md-autocomplete>
 
-      <md-icon flex="100" class="swap-icon">swap_vertical_circle</md-icon>
 
-      <md-autocomplete flex="100" class="ticket-search-destination" md-selected-item="selectedItem"
-                       md-search-text="searchDestination" md-items="item in getMatches(searchDestination)"
-                       md-item-text="item.display" placeholder="Destination">
-        <span md-highlight-text="searchDestination">{{item.display}}</span>
+      <div ng-click='search.swapLocation()' style="text-align: center;">
+        <md-icon  flex="100" class="swap-icon">swap_vertical_circle</md-icon>
+      </div>
+
+
+      <md-autocomplete md-selected-item="search.selectedDestination"
+                       md-search-text="search.params.destination"
+                       md-items="destination in search.destinations()"
+                       md-item-text="destination.attributes.name"
+                       md-min-length='0'
+                       placeholder="Destination" flex="100">
+        <md-item-template>
+          <span md-highlight-text="searchDestination">{{destination.attributes.name}}</span>
+        </md-item-template>
+
+        <md-not-found>
+          No matches found.
+        </md-not-found>
       </md-autocomplete>
+
+
+
     </div>
 
+    <p> </p>
+
     <div flex="100" class="ticket-search-date">
-      <md-datepicker ng-model="ticketSearchCtrl.params['on_date']" md-min-date="ticketSearchCtrl.config.minDate" md-placeholder="Enter date">
+      <md-datepicker ng-model="search.params['on_date']"
+                     md-min-date="search.config.minDate"
+                     md-placeholder="Enter date">
       </md-datepicker>
     </div>
 

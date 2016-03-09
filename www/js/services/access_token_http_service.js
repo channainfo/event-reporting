@@ -4,7 +4,13 @@
       request: function(httpOptions, success, failed){
         httpOptions.headers = AccessToken.getRequestHeader()
         httpOptions.url = ApiConfig.apiUrl(httpOptions.url)
-        $http(httpOptions).then(success, failed)
+
+        if(success !== undefined && failed !== undefined)
+          $http(httpOptions).then(success, failed)
+        else if(success !== undefined)
+          $http(httpOptions).then(success)
+        else
+          $http(httpOptions)
       }
     }
   }
