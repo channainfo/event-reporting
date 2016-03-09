@@ -8,6 +8,11 @@
         templateUrl: "js/app/main/main.html",
         publicAccess: false
       })
+      .state('introduction', {
+        url: "/introduction",
+        templateUrl: "js/app/introduction/introduction.html",
+        publicAccess: true
+      })
       .state('registration', {
         url: "/registration",
         templateUrl: "js/app/registration/registration.html",
