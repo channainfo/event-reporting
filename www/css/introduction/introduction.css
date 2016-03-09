@@ -1,0 +1,40 @@
+.introduction-step-container{
+  margin-top: 4%;
+  text-align: center;
+}
+
+.introduction-icon{
+  width: 47%;
+  margin: 0 auto;
+}
+
+.guarantee-price{
+  width: 70%;
+}
+
+.introduction-title{
+  font-size: 180%;
+}
+
+.introduction-benefit{
+  margin-top: 30px;
+  font-size: 145%;
+}
+
+.introduction-button{
+  position: absolute;
+  bottom: 0;
+  font-size: 170%;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.introduction-sign-in-link{
+  color: #009343;
+}
+
+.introduction-button-icon{
+  margin-top: -13px;
+}
