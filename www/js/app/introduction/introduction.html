@@ -1,9 +1,10 @@
-<div>
-  <slick dots="true" infinite="false" speed="300" slides-to-show="1" touch-move="true" slides-to-scroll="1">
+<div class="introduction-body">
+  <slick dots="true" infinite="false" speed="300" slides-to-show="1" touch-move="true" slides-to-scroll="1"
+         class="introduction-slide-container">
     <!-- Introduction step -->
-    <div class="introduction-step-container">
-      <md-card>
-        <img ng-src="img/introduction/bookmebus_logo.jpg" class="md-card-image introduction-icon">
+    <div layout="row">
+      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
+        <img ng-src="img/introduction/bookmebus_logo.jpg" class="md-card-image">
         <md-card-content>
           <p class="introduction-benefit">
             The easiest way to book bus tickets in Cambodia.
@@ -12,13 +13,13 @@
       </md-card>
     </div>
 
-    <!-- Find guarenteed price step -->
-    <div class="introduction-step-container">
-      <md-card>
-        <img ng-src="img/introduction/price.png" class="md-card-image introduction-icon guarantee-price">
+    <!-- Guaranteed price step -->
+    <div layout="row">
+      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
+        <img ng-src="img/introduction/price.png" class="md-card-image introduction-icon guaranteed-icon">
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline bold-text introduction-title">Guaranteed Price</span>
+            <span class="md-headline bold-text">Guaranteed Price</span>
           </md-card-title-text>
         </md-card-title>
         <md-card-content>
@@ -30,12 +31,12 @@
     </div>
 
     <!-- Authorized operators step -->
-    <div class="introduction-step-container">
-      <md-card>
+    <div layout="row">
+      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
         <img ng-src="img/introduction/bus_operator.png" class="md-card-image introduction-icon">
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline bold-text introduction-title">Authorized Operators</span>
+            <span class="md-headline bold-text">Authorized Operators</span>
           </md-card-title-text>
         </md-card-title>
         <md-card-content>
@@ -47,12 +48,12 @@
     </div>
 
     <!-- E-ticket & M-ticket step -->
-    <div class="introduction-step-container">
-      <md-card>
+    <div layout="row">
+      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
         <img ng-src="img/introduction/e_ticket.png" class="md-card-image introduction-icon">
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline bold-text introduction-title">E-Ticket & M-Ticket</span>
+            <span class="md-headline bold-text">E-Ticket & M-Ticket</span>
           </md-card-title-text>
         </md-card-title>
         <md-card-content>
@@ -64,12 +65,12 @@
     </div>
 
     <!-- Reschedule step -->
-    <div class="introduction-step-container">
-      <md-card>
+    <div layout="row">
+      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
         <img ng-src="img/introduction/reschedule.png" class="md-card-image introduction-icon">
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline bold-text introduction-title">Reschedule</span>
+            <span class="md-headline bold-text">Reschedule</span>
           </md-card-title-text>
         </md-card-title>
         <md-card-content>
@@ -81,12 +82,12 @@
     </div>
 
     <!-- Save points step -->
-    <div class="introduction-step-container">
-      <md-card>
+    <div layout="row">
+      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
         <img ng-src="img/introduction/save_points.png" class="md-card-image introduction-icon">
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline bold-text introduction-title">Save points</span>
+            <span class="md-headline bold-text">Save points</span>
           </md-card-title-text>
         </md-card-title>
         <md-card-content>
@@ -98,12 +99,12 @@
     </div>
 
     <!-- Rate and Review step -->
-    <div class="introduction-step-container">
-      <md-card>
+    <div layout="row">
+      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
         <img ng-src="img/introduction/rate_review.png" class="md-card-image introduction-icon">
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline bold-text introduction-title">Rate & Review</span>
+            <span class="md-headline bold-text">Rate & Review</span>
           </md-card-title-text>
         </md-card-title>
         <md-card-content>
@@ -115,12 +116,12 @@
     </div>
 
     <!-- Online payment step -->
-    <div class="introduction-step-container">
-      <md-card>
+    <div layout="row">
+      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
         <img ng-src="img/introduction/payment.png" class="md-card-image introduction-icon">
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline bold-text introduction-title">Online payment</span>
+            <span class="md-headline bold-text">Online payment</span>
           </md-card-title-text>
         </md-card-title>
         <md-card-content>
@@ -132,11 +133,11 @@
     </div>
 
   </slick>
+</div>
 
-  <div class="introduction-button bold-text">
-    <a ui-sref="sign_in" class="introduction-sign-in-link">
-      Sign in now
-      <ng-md-icon icon="chevron_right" class="bold-text introduction-button-icon" size="35"></ng-md-icon>
-    </a>
-  </div>
+<div class="introduction-button bold-text">
+  <a ui-sref="sign_in" class="introduction-sign-in-link">
+    Sign in now
+    <ng-md-icon icon="chevron_right" class="bold-text introduction-button-icon" size="35"></ng-md-icon>
+  </a>
 </div>
