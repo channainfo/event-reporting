@@ -1,34 +1,40 @@
-.introduction-step-container{
-  margin-top: 4%;
+.introduction-body{
+  height: 93vh;
+}
+
+.introduction-slide-container{
+  width: 92%;
+  height: 92%;
+  padding-left:5%;
+}
+
+.introduction-card{
+  margin: 0 auto !important;
   text-align: center;
+  padding: 0px;
+  padding-top: 10%;
 }
 
 .introduction-icon{
-  width: 47%;
+  width: 80%;
   margin: 0 auto;
 }
 
-.guarantee-price{
-  width: 70%;
-}
-
-.introduction-title{
-  font-size: 180%;
+.guaranteed-icon{
+  width: 110%;
 }
 
 .introduction-benefit{
   margin-top: 30px;
-  font-size: 145%;
+  font-size: 140%;
+  text-align: center
 }
 
 .introduction-button{
-  position: absolute;
-  bottom: 0;
   font-size: 170%;
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  margin-bottom: 15px;
 }
 
 .introduction-sign-in-link{

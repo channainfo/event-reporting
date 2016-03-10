@@ -6,8 +6,11 @@ a{
   color: #009901;
 }
 .slick-dots{
-  position: fixed !important;
-  bottom: 40px !important;
+  bottom: -25px !important;
+}
+.slick-dots li{
+  margin: 0px !important;
+  margin-top: 0px !important;
 }
 md-card{
   margin: 0px !important;
