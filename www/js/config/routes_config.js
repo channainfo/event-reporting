@@ -33,6 +33,11 @@
         templateUrl: 'js/app/main/ticket_search/ticket_search.html',
         publicAccess: false
       })
+      .state('search_result', {
+        url: '/search_result',
+        templateUrl: 'js/app/main/search_result/search_result.html',
+        publicAccess: false
+      })
   }
 
   angular.module('bookmebus')

@@ -1,0 +1,66 @@
+.content-container{
+  height: 99vh;
+}
+
+.routes-container{
+  height: 100%;
+}
+
+.route-container{
+  margin-top: 10px;
+}
+
+.operator-logo {
+  max-width: 100px;
+  max-height: 100px;
+  margin-top: 10px;
+}
+
+.route-info-container{
+  margin-left: -6px;
+  margin-right: -6px;
+  padding-bottom: 10px;
+}
+
+.operator-logo-container, .price-container{
+  height: 35px;
+}
+
+.price-container{
+  margin-top: 15px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.price{
+  color: #009901;
+  font-size: 16px;
+}
+
+.more-detail-button{
+  padding-top: 30px;
+  text-align:right;
+}
+
+.bus-type{
+  font-size: 12px;
+  text-align: left;
+  margin-top: 15px;
+}
+
+.bus-icon{
+  font-size: 15px;
+}
+
+.departure-time, .arrival-time{
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.travel-duration{
+  text-align: right;
+  font-size: 12px;
+  margin-top: 11px;
+}

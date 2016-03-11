@@ -1,0 +1,27 @@
+<div layout="column" layout-fill ng-controller="SearchResultController as searchResultCtrl">
+  <div class="content-container">
+
+    <md-toolbar md-scroll-shrink>
+      <div class="md-toolbar-tools toolbar-top">
+        <a ui-sref="ticket_search" class="toolbar-back-button">
+          <ng-md-icon icon="chevron_left" size="35px" class="white-text"></ng-md-icon>
+        </a>
+        <div class="white-text" style="font-size: 15px">
+          Banteay Meanchey <md-icon class="white-text bold-text" style="font-size: 12px">arrow_forward</md-icon> Kampong Cham
+        </div>
+      </div>
+    </md-toolbar>
+
+    <md-content class="routes-container">
+      <md-list>
+        <md-list-item ng-repeat="route in searchResultCtrl.searchRoutes"
+                      class="md-whiteframe-3dp route-container">
+          <search-result route-object="route" route-attributes="route.attributes"
+                         show-bottom-sheet="searchResultCtrl.showBottomSheet($index)"
+                         show-details="searchResultCtrl.showDetails($index)">
+          </search-result>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </div>
+</div>

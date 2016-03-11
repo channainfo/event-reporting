@@ -1,0 +1,26 @@
+<div flex layout="row" layout-wrap class="route-info-container">
+  <div flex="80" layout="row" layout-wrap>
+    <div flex="50" class="operator-logo-container">
+      <img ng-src="img/operators/green-eagle-express.png" class="operator-logo"/>
+    </div>
+    <div flex="50" class="price-container">
+      <span ng-show="routeObject.attributes.price_local == routeObject.attributes.price_foreigner" class="price bold-text">
+        USD {{ routeAttributes.price_local }}
+      </span>
+      <span ng-show="routeObject.attributes.price_local != routeObject.attributes.price_foreigner" class="price bold-text">
+        USD {{ routeAttributes.price_local }} - {{ routeAttributes.price_foreigner }}
+      </span>
+    </div>
+    <div flex="50" class="bus-type">
+      {{ routeAttributes.vehicle_type_name }}
+      <md-icon class="bus-icon">directions_bus</md-icon>
+    </div>
+    <div flex="25" class="departure-time">{{ routeAttributes.departure }}</div>
+    <div flex="25" class="arrival-time">{{ routeAttributes.arrival }}</div>
+  </div>
+
+  <div flex="20" class="more-detail-button">
+    <md-icon ng-click="showBottomSheet()">more_vert</md-icon>
+    <div class="travel-duration">{{ routeAttributes.duration }}</div>
+  </div>
+</div>
