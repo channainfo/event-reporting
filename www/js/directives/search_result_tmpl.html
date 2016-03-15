@@ -1,26 +1,32 @@
 <div flex layout="row" layout-wrap class="route-info-container">
   <div flex="80" layout="row" layout-wrap>
     <div flex="50" class="operator-logo-container">
-      <img ng-src="img/operators/green-eagle-express.png" class="operator-logo"/>
+      <img ng-src="{{host}}{{routeObject.operator_logo.thumb}}" class="operator-logo"/>
     </div>
     <div flex="50" class="price-container">
-      <span ng-show="routeObject.attributes.price_local == routeObject.attributes.price_foreigner" class="price bold-text">
-        USD {{ routeAttributes.price_local }}
+      <span ng-show="routeObject.price_local == routeObject.price_foreigner" class="price bold-text">
+        USD {{ routeObject.price_local | number: 2 }}
       </span>
-      <span ng-show="routeObject.attributes.price_local != routeObject.attributes.price_foreigner" class="price bold-text">
-        USD {{ routeAttributes.price_local }} - {{ routeAttributes.price_foreigner }}
+      <span ng-show="routeObject.price_local != routeObject.price_foreigner" class="price bold-text">
+        USD {{ routeObject.price_local | number: 2 }} - {{ routeObject.price_foreigner | number: 2 }}
       </span>
+
+      <!-- Message render in search result -->
+      <!-- <div class="error bold-text route-message">
+        Not available for booking at this time
+      </div> -->
+
     </div>
     <div flex="50" class="bus-type">
-      {{ routeAttributes.vehicle_type_name }}
-      <md-icon class="bus-icon">directions_bus</md-icon>
+      {{ routeObject.vehicle_type_name }}
+      <ng-md-icon icon="directions_bus" size="15" class="bus-icon"></ng-md-icon>
     </div>
-    <div flex="25" class="departure-time">{{ routeAttributes.departure }}</div>
-    <div flex="25" class="arrival-time">{{ routeAttributes.arrival }}</div>
+    <div flex="25" class="departure-time">{{ routeObject.departureTime }}</div>
+    <div flex="25" class="arrival-time">{{ routeObject.arrivalTime }}</div>
   </div>
 
   <div flex="20" class="more-detail-button">
-    <md-icon ng-click="showBottomSheet()">more_vert</md-icon>
-    <div class="travel-duration">{{ routeAttributes.duration }}</div>
+    <ng-md-icon ng-click="showBottomSheet()" icon="more_vert"></ng-md-icon>
+    <div class="travel-duration">{{ routeObject.durationTime }}</div>
   </div>
 </div>

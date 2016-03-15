@@ -7,8 +7,14 @@
 }
 
 .boarding-dropoff-icon{
+  margin-top: -2px;
   color: grey;
   font-size: 20px;
+}
+
+.search-ticket-swap-icon{
+  color: grey;
+  margin: 10px 0px 10px 0px;
 }
 
 .ticket-search-boarding-dropoff-line{

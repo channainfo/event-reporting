@@ -21,7 +21,7 @@
 
     <div flex="90" layout="row" layout-wrap class="ticket-search-input-container">
       <md-autocomplete md-selected-item="search.selectedOrigin"
-                       md-search-text="search.params.origin"
+                       md-search-text="search.params.from"
                        md-items="origin in search.origins()"
                        md-item-text="origin.attributes.name"
                        md-min-length='0'
@@ -36,13 +36,13 @@
       </md-autocomplete>
 
 
-      <div ng-click='search.swapLocation()' style="text-align: center;">
-        <md-icon  flex="100" class="swap-icon">swap_vertical_circle</md-icon>
+      <div ng-click='search.swapLocation()' class="search-ticket-swap-icon">
+        <ng-md-icon icon="swap_vert_circle"></ng-md-icon>
       </div>
 
 
       <md-autocomplete md-selected-item="search.selectedDestination"
-                       md-search-text="search.params.destination"
+                       md-search-text="search.params.to"
                        md-items="destination in search.destinations()"
                        md-item-text="destination.attributes.name"
                        md-min-length='0'
@@ -70,11 +70,9 @@
     </div>
 
     <div flex="100" class="ticket-search-button">
-      <a ui-sref="search_result">
-        <md-button class="md-raised md-primary white-text bold-text btn-search">
-          <ng-md-icon icon="search" class="white-text"></ng-md-icon>Search
-        </md-button>
-      </a>
+      <md-button ng-click="search.findTickets()" class="md-raised md-primary white-text bold-text btn-search">
+        <ng-md-icon icon="search" class="white-text"></ng-md-icon>Find Tickets
+      </md-button>
     </div>
   </div>
 

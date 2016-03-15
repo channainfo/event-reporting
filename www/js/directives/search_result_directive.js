@@ -6,7 +6,7 @@
               replace: true,
               scope: {
                 routeObject: "=",
-                routeAttributes: "=",
+                host: "=",
                 showBottomSheet: "&",
                 showDetails: "&"
               }

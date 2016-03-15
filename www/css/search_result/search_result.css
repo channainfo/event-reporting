@@ -1,3 +1,8 @@
+.search-result-header{
+  font-size: 70%;
+  margin-top: 4px;
+}
+
 .content-container{
   height: 99vh;
 }
@@ -27,14 +32,15 @@
 }
 
 .price-container{
-  margin-top: 15px;
+  margin-top: 10px;
   text-align: center;
+  margin-bottom: 10px;
   padding-top: 15px;
 }
 
 .price{
   color: #009901;
-  font-size: 16px;
+  font-size: 100%;
 }
 
 .more-detail-button{
@@ -43,24 +49,29 @@
 }
 
 .bus-type{
-  font-size: 12px;
+  font-size: 90%;
   text-align: left;
-  margin-top: 15px;
+  margin-top: 8px;
 }
 
 .bus-icon{
-  font-size: 15px;
+  margin-top: 5px;
 }
 
 .departure-time, .arrival-time{
   font-weight: bold;
-  font-size: 12px;
+  font-size: 90%;
   text-align: center;
   margin-top: 15px;
 }
 
 .travel-duration{
   text-align: right;
-  font-size: 12px;
-  margin-top: 11px;
+  font-size: 95%;
+  margin-top: 15px;
+}
+
+.route-message{
+  font-size: 85%;
+  padding-top: 5px;
 }
