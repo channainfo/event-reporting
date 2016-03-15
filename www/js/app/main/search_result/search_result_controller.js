@@ -1,7 +1,13 @@
 (function(){
-  var searchResultController = function($mdBottomSheet, $state, ApiConfig, SearchResult){
+  var searchResultController = function($scope, $mdBottomSheet, $state, ApiConfig, SearchResult){
     this.host = ApiConfig.HOST
     this.resultDecorator = null
+    var self = this
+
+    $scope.$on('ticketSearchSuccess', function(event, data){
+      avocado.debug.log("Data = ", data)
+      self.searchResultDecorate()
+    })
 
     this.searchResultDecorate = function(){
       SearchResult.decorate()
@@ -19,6 +25,6 @@
   }
 
   angular.module('bookmebus')
-         .controller('SearchResultController', ['$mdBottomSheet', '$state', 'ApiConfig', 'SearchResult',
+         .controller('SearchResultController', ['$scope', '$mdBottomSheet', '$state', 'ApiConfig', 'SearchResult',
                                                searchResultController]);
 })()

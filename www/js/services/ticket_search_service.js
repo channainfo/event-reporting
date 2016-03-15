@@ -1,5 +1,5 @@
 (function(){
-  var ticketSearch = function(UserTokenHttp){
+  var ticketSearch = function($rootScope, UserTokenHttp){
     return {
       result: null,
       attributes: {},
@@ -15,9 +15,9 @@
 
         UserTokenHttp.request( options, function(response){
           self.result = response.data
-          success(self.result)
+          $rootScope.$broadcast('ticketSearchSuccess', self.result)
         } ,function(response){
-          failed(response.data)
+          $rootScope.$broadcast('ticketSearchFailed', self.result)
         })
       },
 
@@ -36,5 +36,5 @@
   }
 
   angular.module('bookmebus')
-         .factory('TicketSearch', ['UserTokenHttp', ticketSearch])
+         .factory('TicketSearch', ['$rootScope', 'UserTokenHttp', ticketSearch])
 })()
