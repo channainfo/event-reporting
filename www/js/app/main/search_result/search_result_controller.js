@@ -1,5 +1,5 @@
 (function(){
-  var searchResultController = function($scope, $mdBottomSheet, $state, ApiConfig, SearchResult){
+  var searchResultController = function($scope, $mdBottomSheet, $state, ApiConfig, TicketSearch){
     this.host = ApiConfig.HOST
     this.resultDecorator = null
     var self = this
@@ -10,10 +10,9 @@
     })
 
     this.searchResultDecorate = function(){
-      SearchResult.decorate()
-      this.resultDecorator = SearchResult
+      TicketSearch.decorateResult()
+      this.resultDecorator = TicketSearch
     }
-
 
     this.showBottomSheet = function(){
       $mdBottomSheet.show({
@@ -21,10 +20,10 @@
       })
     }
 
-    
+
   }
 
   angular.module('bookmebus')
-         .controller('SearchResultController', ['$scope', '$mdBottomSheet', '$state', 'ApiConfig', 'SearchResult',
+         .controller('SearchResultController', ['$scope', '$mdBottomSheet', '$state', 'ApiConfig', 'TicketSearch',
                                                searchResultController]);
 })()

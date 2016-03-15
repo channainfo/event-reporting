@@ -1,5 +1,5 @@
 (function(){
-  var ticketSearch = function($rootScope, UserTokenHttp){
+  var ticketSearch = function(UserTokenHttp){
     return {
       result: null,
       attributes: {},
@@ -15,14 +15,20 @@
 
         UserTokenHttp.request( options, function(response){
           self.result = response.data
-          $rootScope.$broadcast('ticketSearchSuccess', self.result)
+          success(self.result)
         } ,function(response){
-          $rootScope.$broadcast('ticketSearchFailed', self.result)
+          failed(response.data)
         })
       },
 
-      getResult: function(){
-        return this.result
+      decorateResult: function(){
+        if(this.result) {
+          for(var i=0; i< this.result['data'].length; i++){
+            this.result['data'][i].attributes['departureTime'] = avocado.dateTime.getTimeFromSec(this.result['data'][i].attributes['departure'])
+            this.result['data'][i].attributes['arrivalTime'] = avocado.dateTime.getTimeFromSec(this.result['data'][i].attributes['arrival'])
+            this.result['data'][i].attributes['durationTime'] = avocado.dateTime.getTimeIntervalFromSec(this.result['data'][i].attributes['duration'])
+          }
+        }
       },
 
       hasResult: function(){
@@ -36,5 +42,5 @@
   }
 
   angular.module('bookmebus')
-         .factory('TicketSearch', ['$rootScope', 'UserTokenHttp', ticketSearch])
+         .factory('TicketSearch', ['UserTokenHttp', ticketSearch])
 })()

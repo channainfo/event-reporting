@@ -1,13 +1,13 @@
 (function(){
-  var ticketSearchController = function($state, Location, TicketSearch, Store){
+  var ticketSearchController = function($rootScope, $state, Location, TicketSearch, Store){
     var self = this
     this.config = {}
     this.config.minDate = moment().toDate()
 
     this.params = {
-      from: '',
-      to: '',
-      on_date: moment().add(1, 'days').toDate()
+      from: TicketSearch.attributes['from'] || "",
+      to: TicketSearch.attributes['to'] || "",
+      on_date: TicketSearch.attributes['on_date'] || moment().add(1, 'days').toDate()
     }
 
     this.origins = function(){
@@ -53,23 +53,20 @@
     }
 
     this.findTickets = function(){
-      TicketSearch.run(self.params)
+      TicketSearch.run(self.params, self.ticketSearchSuccess, self.ticketSearchFailed )
       $state.go('search_result')
     }
 
     this.ticketSearchSuccess = function(searchResult){
-      avocado.debug.log(searchResult)
-      //if(TicketSearch.hasResult() || TicketSearch.hasSuggested())
-        $state.go('search_result')
+      $rootScope.$broadcast('ticketSearchSuccess', searchResult)
     }
 
-    this.ticketSearchFailed = function(response){
-      avocado.debug.log(response)
-      avocado.debug.log('search failed')
+    this.ticketSearchFailed = function(searchError){
+      $rootScope.$broadcast('ticketSearchFailed', searchError)
     }
 
   }
 
   angular.module('bookmebus')
-         .controller('TicketSearchController', ['$state', 'Location', 'TicketSearch', 'Store', ticketSearchController ])
+         .controller('TicketSearchController', ['$rootScope', '$state', 'Location', 'TicketSearch', 'Store', ticketSearchController ])
 })()
