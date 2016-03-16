@@ -75,3 +75,8 @@
   font-size: 85%;
   padding-top: 5px;
 }
+
+.suggested-routes{
+  padding: 10px;
+  line-height: 20px;
+}

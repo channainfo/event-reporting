@@ -32,3 +32,11 @@
   margin-right: 15px;
   margin-top: -12px;
 }
+
+.loading-process{
+  height: 100%;
+}
+
+.success-text{
+  color: green;
+}

@@ -1,7 +1,7 @@
 <div ng-controller="TicketSearchController as search">
 
-   <md-toolbar>
-    <div class="md-toolbar-tools toolbar-top">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
       <a ui-sref="main" class="toolbar-back-button">
         <ng-md-icon icon="chevron_left" size="35px" class="white-text"></ng-md-icon>
       </a>
@@ -35,11 +35,9 @@
         </md-not-found>
       </md-autocomplete>
 
-
       <div ng-click='search.swapLocation()' class="search-ticket-swap-icon">
         <ng-md-icon icon="swap_vert_circle"></ng-md-icon>
       </div>
-
 
       <md-autocomplete md-selected-item="search.selectedDestination"
                        md-search-text="search.params.to"
@@ -55,8 +53,6 @@
           No matches found.
         </md-not-found>
       </md-autocomplete>
-
-
 
     </div>
 

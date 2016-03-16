@@ -9,6 +9,13 @@
       writeStore: function(data){
         Store.setObject(this.name, data)
       },
+      findById: function(id){
+        var locations = this.readStore()
+        for(var i=0; i<locations.length; i++)
+          if(locations[i]['id'] == id)
+            return locations[i]
+        return null
+      },
       load: function(success, failed){
         var options = {
           method: 'GET',

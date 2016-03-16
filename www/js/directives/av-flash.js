@@ -4,7 +4,7 @@
       restrict: 'EC',
       templateUrl: 'js/directives/av-flash.html',
       link: function(scope){
-        console.log("Flash", Flash)
+        avocado.debug.log("Flash", Flash)
         scope.flash = Flash
       }
     }

@@ -1,5 +1,5 @@
 (function(){
-  var ticketSearch = function(UserTokenHttp){
+  var ticketSearch = function(UserTokenHttp, Location){
     return {
       result: null,
       attributes: {},
@@ -31,6 +31,22 @@
         }
       },
 
+      decorateSuggestedResult: function(){
+        if(this.result){
+          for(var i=0; i< this.result['data'].length; i++){
+            var locationObj = {
+              id: this.result['data'][i],
+              name: this.getSuggestedLocationName(this.result['data'][i])
+            }
+            this.result['data'][i] = locationObj
+          }
+        }
+      },
+
+      getSuggestedLocationName: function(id){
+        return Location.findById(id).attributes['name']
+      },
+
       hasResult: function(){
         return this.result.meta['type'] == 'result'
       },
@@ -42,5 +58,5 @@
   }
 
   angular.module('bookmebus')
-         .factory('TicketSearch', ['UserTokenHttp', ticketSearch])
+         .factory('TicketSearch', ['UserTokenHttp', 'Location', ticketSearch])
 })()

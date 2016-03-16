@@ -3,7 +3,7 @@
   <div class="content-container">
 
     <md-toolbar md-scroll-shrink>
-      <div class="md-toolbar-tools toolbar-top">
+      <div class="md-toolbar-tools">
         <a ui-sref="ticket_search" class="toolbar-back-button">
           <ng-md-icon icon="chevron_left" size="35px" class="white-text"></ng-md-icon>
         </a>
@@ -18,7 +18,10 @@
 
     <md-content class="routes-container">
 
-      <md-list>
+      <av-loading></av-loading>
+
+      <md-list ng-show="searchResultCtrl.hasResult">
+        
         <md-list-item ng-repeat="route in searchResultCtrl.resultDecorator.result['data']"
                       class="md-whiteframe-3dp route-container">
 
@@ -29,6 +32,18 @@
 
         </md-list-item>
       </md-list>
+
+      <div ng-show="searchResultCtrl.hasSuggested">
+        <p class="suggested-routes">
+          Currently, we have not found any bus departure from <b>{{ searchResultCtrl.resultDecorator.attributes['from'] }}</b> 
+          to <b>{{ searchResultCtrl.resultDecorator.attributes['to'] }}</b>. But, you might consider these trip(s) that our fellows did to reach <b>{{ searchResultCtrl.resultDecorator.attributes['to'] }}</b>.
+        </p>
+
+        <p ng-repeat="suggestedRoute in searchResultCtrl.suggestedResultDecorator.result['data']" class="suggested-routes">
+          <b>{{ $index + 1 }}</b>. <b class="success-text">{{ searchResultCtrl.resultDecorator.attributes['from'] }}</b> to 
+          <b class="success-text">{{ suggestedRoute['name'] }}</b> and <b class="success-text">{{ suggestedRoute['name'] }}</b> to <b class="success-text">{{ searchResultCtrl.resultDecorator.attributes['to'] }}</b>
+        </p>
+      </div>
 
     </md-content>
   </div>

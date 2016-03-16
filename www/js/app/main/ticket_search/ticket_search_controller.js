@@ -1,5 +1,5 @@
 (function(){
-  var ticketSearchController = function($rootScope, $state, Location, TicketSearch, Store){
+  var ticketSearchController = function($rootScope, $state, Location, TicketSearch, Loading){
     var self = this
     this.config = {}
     this.config.minDate = moment().toDate()
@@ -54,10 +54,12 @@
 
     this.findTickets = function(){
       TicketSearch.run(self.params, self.ticketSearchSuccess, self.ticketSearchFailed )
+      Loading.show()
       $state.go('search_result')
     }
 
     this.ticketSearchSuccess = function(searchResult){
+      Loading.hide()
       $rootScope.$broadcast('ticketSearchSuccess', searchResult)
     }
 
@@ -68,5 +70,5 @@
   }
 
   angular.module('bookmebus')
-         .controller('TicketSearchController', ['$rootScope', '$state', 'Location', 'TicketSearch', 'Store', ticketSearchController ])
+         .controller('TicketSearchController', ['$rootScope', '$state', 'Location', 'TicketSearch', 'Loading', ticketSearchController ])
 })()
