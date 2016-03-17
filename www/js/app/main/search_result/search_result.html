@@ -45,6 +45,12 @@
         </p>
       </div>
 
+      <div ng-show="searchResultCtrl.resultDecorator.hasNoSuggested()">
+        <p class="no-result-message">
+          Searched route is not available. Please try another route or contact us on live chat for sure!
+        </p>
+      </div>
+
     </md-content>
   </div>
 </div>

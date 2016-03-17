@@ -1,5 +1,15 @@
-.ticket-search-container{
-  margin-top: 20px;
+.ticket-search-flash-message{
+  text-align: center;
+}
+
+.ticket-search-origin{
+  width: 100%;
+  margin-top: 0px;
+}
+
+.ticket-search-destination{
+  width: 100%;
+  margin-top: 10px;
 }
 
 .ticket-search-icon{
@@ -14,7 +24,6 @@
 
 .search-ticket-swap-icon{
   color: grey;
-  margin: 10px 0px 10px 0px;
 }
 
 .ticket-search-boarding-dropoff-line{
@@ -56,7 +65,7 @@
 
 .ticket-search-date {
   margin-top: -15px;
-  padding-right: 50px;
+  padding-right: 60px;
 }
 
 .swap-icon {
