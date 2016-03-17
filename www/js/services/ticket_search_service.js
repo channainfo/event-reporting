@@ -21,6 +21,13 @@
         })
       },
 
+      decorate: function() {
+        if(this.hasResult())
+          this.decorateResult()
+        else if(this.hasSuggested())
+          this.decorateSuggestedResult()
+      },
+
       decorateResult: function(){
         if(this.result) {
           for(var i=0; i< this.result['data'].length; i++){
@@ -48,12 +55,17 @@
       },
 
       hasResult: function(){
-        return this.result.meta['type'] == 'result'
+        return this.result && this.result.meta['type'] == 'result'
       },
 
       hasSuggested: function(){
-        return this.result.meta['type'] == 'no_result' && this.result.data.length > 0
+        return this.result && this.result.meta['type'] == 'no_result' && this.result.data.length > 0
+      },
+
+      hasTypo: function() {
+        return this.result.meta['type'] == 'typo'
       }
+
     }
   }
 

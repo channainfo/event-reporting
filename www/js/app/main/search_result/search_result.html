@@ -1,4 +1,4 @@
-<div layout="column" layout-fill ng-controller="SearchResultController as searchResultCtrl" 
+<div layout="column" layout-fill ng-controller="SearchResultController as searchResultCtrl"
       ng-init="searchResultCtrl.searchResultDecorate()">
   <div class="content-container">
 
@@ -20,12 +20,12 @@
 
       <av-loading></av-loading>
 
-      <md-list ng-show="searchResultCtrl.hasResult">
-        
+      <md-list ng-show="searchResultCtrl.resultDecorator.hasResult()">
+
         <md-list-item ng-repeat="route in searchResultCtrl.resultDecorator.result['data']"
                       class="md-whiteframe-3dp route-container">
 
-          <search-result route-object="route.attributes" host="searchResultCtrl.host"
+          <search-result route-object="route.attributes"
                          show-bottom-sheet="searchResultCtrl.showBottomSheet($index)"
                          show-details="searchResultCtrl.showDetails($index)">
           </search-result>
@@ -33,14 +33,14 @@
         </md-list-item>
       </md-list>
 
-      <div ng-show="searchResultCtrl.hasSuggested">
+      <div ng-show="searchResultCtrl.resultDecorator.hasSuggested()">
         <p class="suggested-routes">
-          Currently, we have not found any bus departure from <b>{{ searchResultCtrl.resultDecorator.attributes['from'] }}</b> 
+          Currently, we have not found any bus departure from <b>{{ searchResultCtrl.resultDecorator.attributes['from'] }}</b>
           to <b>{{ searchResultCtrl.resultDecorator.attributes['to'] }}</b>. But, you might consider these trip(s) that our fellows did to reach <b>{{ searchResultCtrl.resultDecorator.attributes['to'] }}</b>.
         </p>
 
-        <p ng-repeat="suggestedRoute in searchResultCtrl.suggestedResultDecorator.result['data']" class="suggested-routes">
-          <b>{{ $index + 1 }}</b>. <b class="success-text">{{ searchResultCtrl.resultDecorator.attributes['from'] }}</b> to 
+        <p ng-repeat="suggestedRoute in searchResultCtrl.resultDecorator.result['data']" class="suggested-routes">
+          <b>{{ $index + 1 }}</b>. <b class="success-text">{{ searchResultCtrl.resultDecorator.attributes['from'] }}</b> to
           <b class="success-text">{{ suggestedRoute['name'] }}</b> and <b class="success-text">{{ suggestedRoute['name'] }}</b> to <b class="success-text">{{ searchResultCtrl.resultDecorator.attributes['to'] }}</b>
         </p>
       </div>
