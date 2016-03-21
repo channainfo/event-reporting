@@ -1,0 +1,101 @@
+#btnSeatSelectionBack{
+  margin-left: -14px;
+}
+
+#seat-selection-container{
+  background-color: white;
+  height: 100%;
+}
+
+.seat-layout{
+  background-color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.seat-note{
+  text-align: center;
+  background-color: #ECECEC;
+}
+
+.seat-note span{
+  width: 60px;
+}
+
+.seat-note span{
+  display: inline-block;
+  font-size: 12px;
+}
+
+#btnSeatSelectionNext{
+  position: fixed;
+  width: 100%;
+  color: white !important;
+  border-radius: 0px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 0px;
+  height: 50px;
+  font-size: 18px;
+}
+
+.select-seat-checkbox{
+  background-color: white;
+  width: 0px;
+}
+
+.clear-both{
+  clear: both;
+}
+
+.driver-seat{
+  border: 2px solid white;
+  background: url('../../img/vehicle/steering_wheel.png') no-repeat;
+}
+
+.seat-circle{
+  border: 2px solid rgba(202, 32, 212, 0.54);
+  border-radius: 100%;
+  background-color: white;
+}
+
+.box-shadow{
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.seat-label{
+  margin-top: 11px;
+  font-weight: bold
+}
+
+.busy-seat{
+  background-color: #C30000;
+  color: white;
+}
+
+.booked-seat{
+  background-color: yellow;
+  color: black;
+}
+
+.selected-seat{
+  background-color: #4CAF50;
+  color: white;
+}
+
+.seat-note-label{
+  font-weight: bold;
+}
+
+.blank-seat{
+  border: 2px solid white;
+}
+
+.seat-circle, .driver-seat, .blank-seat{
+  width: 40px;
+  height: 40px;
+  margin: 7px;
+  margin-top: 10px;
+  float: left;
+}
