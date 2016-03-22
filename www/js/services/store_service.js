@@ -9,7 +9,7 @@
                 return localStorage[name]
               },
               clear: function(name){
-                localStorage.clear(name)
+                localStorage.removeItem(name)
               },
               isSet: function(name){
                 return localStorage[name] != undefined
