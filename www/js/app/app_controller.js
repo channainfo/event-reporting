@@ -9,7 +9,7 @@
         avocado.debug.log("auth token:", oauthToken)
         self.preload()
       })
-    },
+    }
 
     this.preload = function() {
       Location.load()

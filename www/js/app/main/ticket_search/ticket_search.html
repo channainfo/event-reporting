@@ -11,7 +11,9 @@
     </div>
   </md-toolbar>
 
-  <div flex layout="row" layout-padding layout-wrap layout-align="center start" class="ticket-search-container">
+  <div flex layout="row" layout-padding layout-wrap layout-align="center start">
+
+    <div flex="100" class="av-flash ticket-search-flash-message"> </div>
 
     <div flex="10" class="ticket-search-icon">
       <div class="search-boarding-icon"><ng-md-icon icon="panorama_fisheye" class="boarding-dropoff-icon"></ng-md-icon></div>
@@ -20,40 +22,29 @@
     </div>
 
     <div flex="90" layout="row" layout-wrap class="ticket-search-input-container">
-      <md-autocomplete md-selected-item="search.selectedOrigin"
-                       md-search-text="search.params.from"
-                       md-items="origin in search.origins()"
-                       md-item-text="origin.attributes.name"
-                       md-min-length='0'
-                       placeholder="Origin" flex="100">
-        <md-item-template>
-          <span md-highlight-text="searchOrigin">{{origin.attributes.name}}</span>
-        </md-item-template>
-
-        <md-not-found>
-          No matches found.
-        </md-not-found>
-      </md-autocomplete>
+      <md-input-container class="ticket-search-origin">
+        <label>Origin</label>
+        <md-select ng-model="search.params.from" md-on-open="search.loadOrigins()">
+          <md-option ng-repeat="origin in search.origins" ng-value="origin.attributes['name']"
+                     ng-disabled="search.params.to == origin.attributes['name']">
+            {{ origin.attributes['name'] }}
+          </md-option>
+        </md-select>
+      </md-input-container>
 
       <div ng-click='search.swapLocation()' class="search-ticket-swap-icon">
         <ng-md-icon icon="swap_vert_circle"></ng-md-icon>
       </div>
 
-      <md-autocomplete md-selected-item="search.selectedDestination"
-                       md-search-text="search.params.to"
-                       md-items="destination in search.destinations()"
-                       md-item-text="destination.attributes.name"
-                       md-min-length='0'
-                       placeholder="Destination" flex="100">
-        <md-item-template>
-          <span md-highlight-text="searchDestination">{{destination.attributes.name}}</span>
-        </md-item-template>
-
-        <md-not-found>
-          No matches found.
-        </md-not-found>
-      </md-autocomplete>
-
+      <md-input-container class="ticket-search-destination">
+        <label>Destination</label>
+        <md-select ng-model="search.params.to" md-on-open="search.loadDestinations()">
+          <md-option ng-repeat="destination in search.destinations" ng-value="destination.attributes['name']"
+                     ng-disabled="search.params.from == destination.attributes['name']">
+            {{ destination.attributes['name'] }}
+          </md-option>
+        </md-select>
+      </md-input-container>
     </div>
 
     <p> </p>
