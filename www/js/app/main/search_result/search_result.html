@@ -22,15 +22,11 @@
 
       <md-list ng-show="searchResultCtrl.resultDecorator.hasResult()">
 
-        <md-list-item ng-repeat="route in searchResultCtrl.resultDecorator.result['data']"
-                      class="md-whiteframe-3dp route-container">
+        <search-result result="searchResultCtrl.resultDecorator.result['data']"
+                       show-bottom-sheet="searchResultCtrl.showBottomSheet()"
+                       show-details="searchResultCtrl.showDetails()">
+        </search-result>
 
-          <search-result route-object="route.attributes"
-                         show-bottom-sheet="searchResultCtrl.showBottomSheet($index)"
-                         show-details="searchResultCtrl.showDetails($index)">
-          </search-result>
-
-        </md-list-item>
       </md-list>
 
       <div ng-show="searchResultCtrl.resultDecorator.hasSuggested()">
