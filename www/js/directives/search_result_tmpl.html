@@ -1,32 +1,15 @@
-<div flex layout="row" layout-wrap class="route-info-container">
-  <div flex="80" layout="row" layout-wrap>
-    <div flex="50" class="operator-logo-container">
-      <img ng-src="{{routeObject.operator_logo.thumb}}" class="operator-logo"/>
-    </div>
-    <div flex="50" class="price-container">
-      <span ng-show="routeObject.price_local == routeObject.price_foreigner" class="price bold-text">
-        USD {{ routeObject.price_local | number: 2 }}
-      </span>
-      <span ng-show="routeObject.price_local != routeObject.price_foreigner" class="price bold-text">
-        USD {{ routeObject.price_local | number: 2 }} - {{ routeObject.price_foreigner | number: 2 }}
-      </span>
+<md-list-item ng-repeat="route in result" class="search-result-list-item">
+  <img ng-src="{{route.attributes.operator_logo.medium}}" class="md-avatar" />
 
-      <!-- Message render in search result -->
-      <!-- <div class="error bold-text route-message">
-        Not available for booking at this time
-      </div> -->
-
-    </div>
-    <div flex="50" class="bus-type">
-      {{ routeObject.vehicle_type_name }}
-      <ng-md-icon icon="directions_bus" size="15" class="bus-icon"></ng-md-icon>
-    </div>
-    <div flex="25" class="departure-time">{{ routeObject.departureTime }}</div>
-    <div flex="25" class="arrival-time">{{ routeObject.arrivalTime }}</div>
+  <div class="md-list-item-text" flex>
+    <h3>{{ route.attributes.operator_name }}, {{ route.attributes.vehicle_type_name }}</h3>
+    <h4>
+      <ng-md-icon icon="access_time" size="20"></ng-md-icon>
+      {{ route.attributes.departureTime }}, {{ route.attributes.durationTime }}
+    </h4>
+    <p class="search-result-price">Start from <span class="price"> ${{ route.attributes.price_local }}<span></p>
   </div>
 
-  <div flex="20" class="more-detail-button">
-    <ng-md-icon ng-click="showBottomSheet()" icon="more_vert"></ng-md-icon>
-    <div class="travel-duration">{{ routeObject.durationTime }}</div>
-  </div>
-</div>
+  <ng-md-icon ng-click="showBottomSheet()" icon="more_vert" aria-label="Chat"></ng-md-icon>
+
+</md-list-item>

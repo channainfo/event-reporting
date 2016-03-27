@@ -62,6 +62,10 @@
         return this.result && this.result.meta['type'] == 'no_result' && this.result.data.length > 0
       },
 
+      hasNoSuggested: function(){
+        return this.result && this.result.meta['type'] == 'no_result' && this.result.data.length == 0
+      },
+
       hasTypo: function() {
         return this.result.meta['type'] == 'typo'
       }

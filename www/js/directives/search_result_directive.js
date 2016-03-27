@@ -4,9 +4,8 @@
             return{
               templateUrl: 'js/directives/search_result_tmpl.html',
               scope: {
-                routeObject: "=",
-                showBottomSheet: "&",
-                showDetails: "&"
+                result: "=",
+                showBottomSheet: "&"
               }
             }
          })

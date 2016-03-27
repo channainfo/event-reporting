@@ -1,49 +1,34 @@
 (function(){
-  var ticketSearchController = function($rootScope, $state, Location, TicketSearch, Loading){
+  var ticketSearchController = function($rootScope, $state, Location, TicketSearch, Loading, Flash){
     var self = this
     this.config = {}
     this.config.minDate = moment().toDate()
 
     this.params = {
-      from: TicketSearch.attributes['from'] || "",
-      to: TicketSearch.attributes['to'] || "",
+      from: "",
+      to: "",
       on_date: TicketSearch.attributes['on_date'] || moment().add(1, 'days').toDate()
     }
 
-    this.origins = function(){
+    this.origins = []
+    this.destinations = []
+
+    this.loadOrigins = function(){
+      Flash.reset()
       var locations = Location.readStore()
       locations.sort(function(a, b){
         return b.attributes.hits_origin - a.attributes.hits_origin
       })
-      var result = []
-
-      for(var i=0;i<locations.length; i++) {
-        if(locations[i].attributes.name != self.params.to) {
-          if(self.params.from == "")
-            result.push(locations[i])
-          else if(locations[i].attributes.name_lower.indexOf(self.params.from.toLowerCase()) != -1)
-            result.push(locations[i])
-        }
-      }
-      return result
+      this.origins = locations
     }
 
-    this.destinations = function(){
+    this.loadDestinations = function(){
+      Flash.reset()
       var locations = Location.readStore()
       locations.sort(function(a, b){
         return b.attributes.hits_destination - a.attributes.hits_destination
       })
-      var result = []
-
-      for(var i=0;i< locations.length; i++) {
-        if(locations[i].attributes.name != self.params.from) {
-          if(self.params.to == "")
-            result.push(locations[i])
-          else if(locations[i].attributes.name_lower.indexOf(self.params.to.toLowerCase()) != -1)
-            result.push(locations[i])
-        }
-      }
-      return result
+      this.destinations = locations
     }
 
     this.swapLocation = function() {
@@ -53,7 +38,11 @@
     }
 
     this.findTickets = function(){
-      TicketSearch.run(self.params, self.ticketSearchSuccess, self.ticketSearchFailed )
+      if(self.params.from == "" || self.params.to == ""){
+        Flash.setErrorMessage("Origin/Destination can't be blank")
+        return
+      }
+      TicketSearch.run(self.params, self.ticketSearchSuccess, self.ticketSearchFailed)
       Loading.show()
       $state.go('search_result')
     }
@@ -70,5 +59,5 @@
   }
 
   angular.module('bookmebus')
-         .controller('TicketSearchController', ['$rootScope', '$state', 'Location', 'TicketSearch', 'Loading', ticketSearchController ])
+         .controller('TicketSearchController', ['$rootScope', '$state', 'Location', 'TicketSearch', 'Loading', 'Flash', ticketSearchController ])
 })()

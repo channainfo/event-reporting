@@ -22,15 +22,11 @@
 
       <md-list ng-show="searchResultCtrl.resultDecorator.hasResult()">
 
-        <md-list-item ng-repeat="route in searchResultCtrl.resultDecorator.result['data']"
-                      class="md-whiteframe-3dp route-container">
+        <search-result result="searchResultCtrl.resultDecorator.result['data']"
+                       show-bottom-sheet="searchResultCtrl.showBottomSheet()"
+                       show-details="searchResultCtrl.showDetails()">
+        </search-result>
 
-          <search-result route-object="route.attributes"
-                         show-bottom-sheet="searchResultCtrl.showBottomSheet($index)"
-                         show-details="searchResultCtrl.showDetails($index)">
-          </search-result>
-
-        </md-list-item>
       </md-list>
 
       <div ng-show="searchResultCtrl.resultDecorator.hasSuggested()">
@@ -42,6 +38,12 @@
         <p ng-repeat="suggestedRoute in searchResultCtrl.resultDecorator.result['data']" class="suggested-routes">
           <b>{{ $index + 1 }}</b>. <b class="success-text">{{ searchResultCtrl.resultDecorator.attributes['from'] }}</b> to
           <b class="success-text">{{ suggestedRoute['name'] }}</b> and <b class="success-text">{{ suggestedRoute['name'] }}</b> to <b class="success-text">{{ searchResultCtrl.resultDecorator.attributes['to'] }}</b>
+        </p>
+      </div>
+
+      <div ng-show="searchResultCtrl.resultDecorator.hasNoSuggested()">
+        <p class="no-result-message">
+          Searched route is not available. Please try another route or contact us on live chat for sure!
         </p>
       </div>
 
