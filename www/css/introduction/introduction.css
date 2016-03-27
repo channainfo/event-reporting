@@ -44,3 +44,7 @@
 .introduction-button-icon{
   margin-top: -13px;
 }
+
+.introduction-body md-card.md-default-theme, .introduction-body md-card {
+  background-color: unset !important;
+}

@@ -1,7 +1,17 @@
 (function(){
   var userToken = function(ApiConfig, $http, Store){
     return  {
+      _appVisited: 'appVisited',
       _name: 'user_token',
+
+      isAppVisited: function(){
+        return Store.get(this._appVisited) != undefined
+      },
+
+      setAppVisited: function(){
+        Store.set(this._appVisited, "yes")
+      },
+
       isSignedIn: function(){
         return this.isSetUserToken()
       },

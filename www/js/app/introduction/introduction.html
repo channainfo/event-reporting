@@ -1,143 +1,145 @@
-<div class="introduction-body">
-  <slick dots="true" infinite="false" speed="300" slides-to-show="1" touch-move="true" slides-to-scroll="1"
-         class="introduction-slide-container">
-    <!-- Introduction step -->
-    <div layout="row">
-      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
-        <img ng-src="img/introduction/bookmebus_logo.jpg" class="md-card-image">
-        <md-card-content>
-          <p class="introduction-benefit">
-            The easiest way to book bus tickets in Cambodia.
-          </p>
-        </md-card-content>
-      </md-card>
-    </div>
+<div ng-controller="IntroductionController as introCtrl">
+  <div class="introduction-body">
+    <slick dots="true" infinite="false" speed="300" slides-to-show="1" touch-move="true" slides-to-scroll="1"
+           class="introduction-slide-container">
+      <!-- Introduction step -->
+      <div layout="row">
+        <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
+          <img ng-src="img/introduction/bookmebus_logo.jpg" class="md-card-image">
+          <md-card-content>
+            <p class="introduction-benefit">
+              The easiest way to book bus tickets in Cambodia.
+            </p>
+          </md-card-content>
+        </md-card>
+      </div>
 
-    <!-- Guaranteed price step -->
-    <div layout="row">
-      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
-        <img ng-src="img/introduction/price.png" class="md-card-image introduction-icon guaranteed-icon">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline bold-text">Guaranteed Price</span>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-          <p class="introduction-benefit">
-            The <b>ticket price</b> is the same as the price you buy at the bus station.
-          </p>
-        </md-card-content>
-      </md-card>
-    </div>
+      <!-- Guaranteed price step -->
+      <div layout="row">
+        <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
+          <img ng-src="img/introduction/price.png" class="md-card-image introduction-icon guaranteed-icon">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline bold-text">Guaranteed Price</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content>
+            <p class="introduction-benefit">
+              The <b>ticket price</b> is the same as the price you buy at the bus station.
+            </p>
+          </md-card-content>
+        </md-card>
+      </div>
 
-    <!-- Authorized operators step -->
-    <div layout="row">
-      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
-        <img ng-src="img/introduction/bus_operator.png" class="md-card-image introduction-icon">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline bold-text">Authorized Operators</span>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-          <p class="introduction-benefit">
-            All routes are from <b>authorized operators</b> only.
-          </p>
-        </md-card-content>
-      </md-card>
-    </div>
+      <!-- Authorized operators step -->
+      <div layout="row">
+        <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
+          <img ng-src="img/introduction/bus_operator.png" class="md-card-image introduction-icon">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline bold-text">Authorized Operators</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content>
+            <p class="introduction-benefit">
+              All routes are from <b>authorized operators</b> only.
+            </p>
+          </md-card-content>
+        </md-card>
+      </div>
 
-    <!-- E-ticket & M-ticket step -->
-    <div layout="row">
-      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
-        <img ng-src="img/introduction/e_ticket.png" class="md-card-image introduction-icon">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline bold-text">E-Ticket & M-Ticket</span>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-          <p class="introduction-benefit">
-            <b>E-Ticket</b> or <b>M-Ticket</b> is used for departure.
-          </p>
-        </md-card-content>
-      </md-card>
-    </div>
+      <!-- E-ticket & M-ticket step -->
+      <div layout="row">
+        <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
+          <img ng-src="img/introduction/e_ticket.png" class="md-card-image introduction-icon">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline bold-text">E-Ticket & M-Ticket</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content>
+            <p class="introduction-benefit">
+              <b>E-Ticket</b> or <b>M-Ticket</b> is used for departure.
+            </p>
+          </md-card-content>
+        </md-card>
+      </div>
 
-    <!-- Reschedule step -->
-    <div layout="row">
-      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
-        <img ng-src="img/introduction/reschedule.png" class="md-card-image introduction-icon">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline bold-text">Reschedule</span>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-          <p class="introduction-benefit">
-            You can <b>reschedule</b> your departure.
-          </p>
-        </md-card-content>
-      </md-card>
-    </div>
+      <!-- Reschedule step -->
+      <div layout="row">
+        <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
+          <img ng-src="img/introduction/reschedule.png" class="md-card-image introduction-icon">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline bold-text">Reschedule</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content>
+            <p class="introduction-benefit">
+              You can <b>reschedule</b> your departure.
+            </p>
+          </md-card-content>
+        </md-card>
+      </div>
 
-    <!-- Save points step -->
-    <div layout="row">
-      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
-        <img ng-src="img/introduction/save_points.png" class="md-card-image introduction-icon">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline bold-text">Save points</span>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-          <p class="introduction-benefit">
-            Get <b>1 point</b> every time you bought your ticket.
-          </p>
-        </md-card-content>
-      </md-card>
-    </div>
+      <!-- Save points step -->
+      <div layout="row">
+        <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
+          <img ng-src="img/introduction/save_points.png" class="md-card-image introduction-icon">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline bold-text">Save points</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content>
+            <p class="introduction-benefit">
+              Get <b>1 point</b> every time you bought your ticket.
+            </p>
+          </md-card-content>
+        </md-card>
+      </div>
 
-    <!-- Rate and Review step -->
-    <div layout="row">
-      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
-        <img ng-src="img/introduction/rate_review.png" class="md-card-image introduction-icon">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline bold-text">Rate & Review</span>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-          <p class="introduction-benefit">
-            You can <b>rate</b> and <b>review</b> on bus operators.
-          </p>
-        </md-card-content>
-      </md-card>
-    </div>
+      <!-- Rate and Review step -->
+      <div layout="row">
+        <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
+          <img ng-src="img/introduction/rate_review.png" class="md-card-image introduction-icon">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline bold-text">Rate & Review</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content>
+            <p class="introduction-benefit">
+              You can <b>rate</b> and <b>review</b> on bus operators.
+            </p>
+          </md-card-content>
+        </md-card>
+      </div>
 
-    <!-- Online payment step -->
-    <div layout="row">
-      <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
-        <img ng-src="img/introduction/payment.png" class="md-card-image introduction-icon">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline bold-text">Online payment</span>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-          <p class="introduction-benefit">
-            VISA Card, Master Card, JCB, Pay&Go, Smart Luy, Wing acceptance.
-          </p>
-        </md-card-content>
-      </md-card>
-    </div>
+      <!-- Online payment step -->
+      <div layout="row">
+        <md-card flex-lg="30" flex-md="40" flex-sm="60" flex-gt-xs="50" flex-xs="90" class="introduction-card">
+          <img ng-src="img/introduction/payment.png" class="md-card-image introduction-icon">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline bold-text">Online payment</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content>
+            <p class="introduction-benefit">
+              VISA Card, Master Card, JCB, Pay&Go, Smart Luy, Wing acceptance.
+            </p>
+          </md-card-content>
+        </md-card>
+      </div>
 
-  </slick>
-</div>
+    </slick>
+  </div>
 
-<div class="introduction-button bold-text">
-  <a ui-sref="sign_in" class="introduction-sign-in-link">
-    Access Bus Tickets Now
-    <ng-md-icon icon="chevron_right" class="bold-text introduction-button-icon" size="35"></ng-md-icon>
-  </a>
+  <div class="introduction-button bold-text">
+    <a ng-click='introCtrl.accessTicket()' class="introduction-sign-in-link">
+      Access Bus Tickets Now
+      <ng-md-icon icon="chevron_right" class="bold-text introduction-button-icon" size="35"></ng-md-icon>
+    </a>
+  </div>
 </div>

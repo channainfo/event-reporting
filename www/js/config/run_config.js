@@ -3,10 +3,22 @@
   var runConfig = function ($rootScope, $state, $mdDateLocale, UserToken, ApiConfig) {
 
     $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
+
+      if(!UserToken.isAppVisited() && toState.name != 'introduction') {
+        $state.go('introduction')
+        event.preventDefault()
+      }
+
       if(!UserToken.isSignedIn() && !toState.publicAccess){
         $state.go('sign_in')
         event.preventDefault()
       }
+
+      if(UserToken.isSignedIn() && toState.name == 'sign_in'){
+        $state.go("main")
+        event.preventDefault()
+      }
+
     })
 
     $mdDateLocale.formatDate = function(date) {
