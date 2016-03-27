@@ -12,36 +12,15 @@
   margin-bottom: 15px !important;
 }
 
-.route-container{
-  margin-top: 10px;
-}
-
-.operator-logo {
-  max-width: 100px;
-  max-height: 100px;
-  margin-top: 10px;
-}
-
-.route-info-container{
-  margin-left: -6px;
-  margin-right: -6px;
-  padding-bottom: 10px;
-}
-
-.operator-logo-container, .price-container{
-  height: 35px;
-}
-
-.price-container{
-  margin-top: 10px;
-  text-align: center;
-  margin-bottom: 10px;
-  padding-top: 15px;
+.search-result-price{
+  margin-top: 0px;
 }
 
 .price{
   color: #009901;
-  font-size: 100%;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 5px;
 }
 
 .more-detail-button{
@@ -49,35 +28,13 @@
   text-align:right;
 }
 
-.bus-type{
-  font-size: 90%;
-  text-align: left;
-  margin-top: 8px;
-}
-
-.bus-icon{
-  margin-top: 5px;
-}
-
-.departure-time, .arrival-time{
-  font-weight: bold;
-  font-size: 90%;
-  text-align: center;
-  margin-top: 15px;
-}
-
-.travel-duration{
-  text-align: right;
-  font-size: 95%;
-  margin-top: 15px;
-}
-
-.route-message{
-  font-size: 85%;
-  padding-top: 5px;
-}
-
 .suggested-routes, .no-result-message{
   padding: 10px;
   line-height: 20px;
+}
+
+.search-result-list-item{
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  border-bottom: 1px solid #ECECEC;
 }
