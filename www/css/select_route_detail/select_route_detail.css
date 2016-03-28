@@ -1,0 +1,63 @@
+.booknow-link{
+  font-size: 15px;
+}
+
+.content-info{
+  height: 99vh;
+}
+
+.select-route-detail-container{
+  height: 100%;
+  margin-bottom: 15px !important;
+}
+
+.detail-title{
+  padding: 5px;
+  background-color: #ECECEC;
+}
+
+.info-container{
+  height: 200px;
+  margin-top: 5px;
+  padding: 10px 0px 10px 0px;
+}
+
+.amenities-container{
+  padding-top: 10px;
+  text-align: center;
+}
+
+.boarding-dropoff-container{
+  padding: 5px 0px 0px 5px;
+}
+
+.boarding-icon, .dropoff-icon, .boarding-dropoff-line, .amenities-container{
+  margin: 0 auto;
+}
+
+.boarding-icon{
+  padding-top: 15px;
+}
+
+.dropoff-icon{
+  padding-bottom: 24px;
+}
+
+.boarding-dropoff-icon{
+  font-size: 20px;
+}
+
+.boarding-dropoff-line{
+  border: 1px dashed grey;
+  width: 0px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.amenity-label{
+  font-size: 12px;
+}
+
+.cancellation-container, .notice-container{
+  padding: 10px;
+}

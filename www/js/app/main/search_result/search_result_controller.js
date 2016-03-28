@@ -17,6 +17,10 @@
         templateUrl: 'js/app/main/search_result/search_result_bottom_sheet.html'
       })
     }
+
+    this.showDetails = function(){
+      $state.go('select_route_detail')
+    }
   }
 
   angular.module('bookmebus')

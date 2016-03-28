@@ -38,6 +38,16 @@
         templateUrl: 'js/app/main/search_result/search_result.html',
         publicAccess: false
       })
+      .state('select_route_detail', {
+        url: '/select_route_detail',
+        templateUrl: 'js/app/main/select_route_detail/select_route_detail.html',
+        publicAccess: false
+      })
+      .state('select_seat', {
+        url: '/select_seat',
+        templateUrl: 'js/app/main/select_seat/select_seat.html',
+        publicAccess: false
+      })
   }
 
   angular.module('bookmebus')
