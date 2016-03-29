@@ -6,5 +6,10 @@ window.appSettings = {
   baseApi: 'http://localhost:3000/api/v1/',
 
   dateFormat: 'DD/MM/YYYY',
-  env: 'development'
+  env: 'development',
+
+  dayInstantBookingPreventionInSecond: '10800',
+  nightInstantBookingPreventionInSecond: '28800',
+
+  operatorAllowSeatSelection: '1'
 }
