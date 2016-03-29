@@ -48,3 +48,17 @@
   width: 40px;
   height: 40px;
 }
+
+.toolbar-title{
+  font-size: 15px;
+}
+
+.notice-text{
+  color: blue;
+}
+
+.toolbar-background{
+  background: rgb(0,153,1);
+  position:fixed;
+  top:0;
+}
