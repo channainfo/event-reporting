@@ -1,0 +1,28 @@
+.request-ticket-container{
+  background-color: white;
+  height: 100%;
+}
+
+.requestTicketForm{
+  margin-top: 30px;
+}
+
+.request-ticket-content{
+  margin-right: 20px;
+}
+
+.request-ticket-input{
+  width: 100%;
+  height: 35px;
+}
+
+.request-ticket-pickup-notice{
+  margin-top: 15px;
+  padding: 20px;
+  background-color: #ECECEC;
+  font-size: 15px;
+  line-height: 20px;
+}
+.promotional-code-container{
+  margin-top: 30px;
+}
