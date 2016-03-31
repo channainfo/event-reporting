@@ -20,28 +20,35 @@
 
       <av-loading></av-loading>
 
-      <md-list ng-show="searchResultCtrl.resultDecorator.hasResult()">
+      <md-list ng-if="searchResultCtrl.resultDecorator.hasResult()">
 
         <search-result result="searchResultCtrl.resultDecorator.result['data']"
+                       departure-available="searchResultCtrl.resultDecorator"
                        show-bottom-sheet="searchResultCtrl.showBottomSheet()"
                        show-details="searchResultCtrl.showDetails()">
         </search-result>
 
       </md-list>
 
-      <div ng-show="searchResultCtrl.resultDecorator.hasSuggested()">
+      <div ng-if="searchResultCtrl.resultDecorator.hasSuggested()">
         <p class="suggested-routes">
           Currently, we have not found any bus departure from <b>{{ searchResultCtrl.resultDecorator.attributes['from'] }}</b>
           to <b>{{ searchResultCtrl.resultDecorator.attributes['to'] }}</b>. But, you might consider these trip(s) that our fellows did to reach <b>{{ searchResultCtrl.resultDecorator.attributes['to'] }}</b>.
         </p>
 
         <p ng-repeat="suggestedRoute in searchResultCtrl.resultDecorator.result['data']" class="suggested-routes">
-          <b>{{ $index + 1 }}</b>. <b class="success-text">{{ searchResultCtrl.resultDecorator.attributes['from'] }}</b> to
-          <b class="success-text">{{ suggestedRoute['name'] }}</b> and <b class="success-text">{{ suggestedRoute['name'] }}</b> to <b class="success-text">{{ searchResultCtrl.resultDecorator.attributes['to'] }}</b>
+          <b>{{ $index + 1 }}</b>.
+          <b ng-click="searchResultCtrl.findSuggestedTickets(searchResultCtrl.resultDecorator.attributes['from'], suggestedRoute['name'])" class="success-text">
+            {{ searchResultCtrl.resultDecorator.attributes['from'] }} to {{ suggestedRoute['name'] }}
+          </b> and
+          <b ng-click="searchResultCtrl.findSuggestedTickets(suggestedRoute['name'], searchResultCtrl.resultDecorator.attributes['to'])" class="success-text">
+            {{ suggestedRoute['name'] }} to {{ searchResultCtrl.resultDecorator.attributes['to'] }}
+          </b>
         </p>
       </div>
 
-      <div ng-show="searchResultCtrl.resultDecorator.hasNoSuggested()">
+      <div ng-if="searchResultCtrl.resultDecorator.hasNoSuggested() || searchResultCtrl.resultDecorator.hasTypo() ||
+       searchResultCtrl.findTicketError">
         <p class="no-result-message">
           Searched route is not available. Please try another route or contact us on live chat for sure!
         </p>

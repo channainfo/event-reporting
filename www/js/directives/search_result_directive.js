@@ -5,6 +5,7 @@
               templateUrl: 'js/directives/search_result_tmpl.html',
               scope: {
                 result: "=",
+                departureAvailable: "=",
                 showBottomSheet: "&",
                 showDetails: "&"
               }
