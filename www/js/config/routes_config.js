@@ -58,6 +58,16 @@
         templateUrl: 'js/app/main/request_ticket/request_ticket.html',
         publicAccess: false
       })
+      .state('operators', {
+        url: '/operators',
+        templateUrl: 'js/app/main/operators/operators.html',
+        publicAccess: false
+      })
+      .state('operator_profile', {
+        url: '/operator_profile',
+        templateUrl: 'js/app/main/operators/operator_profile.html',
+        publicAccess: false
+      })
   }
 
   angular.module('bookmebus')
