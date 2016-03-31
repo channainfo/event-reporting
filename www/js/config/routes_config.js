@@ -48,6 +48,11 @@
         templateUrl: 'js/app/main/select_seat/select_seat.html',
         publicAccess: false
       })
+      .state('trip_summary', {
+        url: '/trip_summary',
+        templateUrl: 'js/app/main/trip_summary/trip_summary.html',
+        publicAccess: false
+      })
   }
 
   angular.module('bookmebus')
