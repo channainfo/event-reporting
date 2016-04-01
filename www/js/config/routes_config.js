@@ -48,9 +48,14 @@
         templateUrl: 'js/app/main/select_seat/select_seat.html',
         publicAccess: false
       })
-      .state('trip_summary', {
-        url: '/trip_summary',
-        templateUrl: 'js/app/main/trip_summary/trip_summary.html',
+      .state('passenger_detail', {
+        url: '/passenger_detail',
+        templateUrl: 'js/app/main/passenger_detail/passenger_detail.html',
+        publicAccess: false
+      })
+      .state('request_ticket', {
+        url: '/request_ticket',
+        templateUrl: 'js/app/main/request_ticket/request_ticket.html',
         publicAccess: false
       })
   }
