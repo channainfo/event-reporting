@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <div ng-show="departureAvailable.isDepartureAvailable($index) != ''" class="departure-not-available-container">
+  <div ng-show="departureAvailable.isDepartureAvailable($index) != '' && departureAvailable.attributes['on_date'] != null" class="departure-not-available-container">
     <div class="departure-not-available-label">{{ departureAvailable.isDepartureAvailable($index) }}</div>
   </div>
 

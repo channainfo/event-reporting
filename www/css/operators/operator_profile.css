@@ -21,17 +21,53 @@
   width: 125px;
   height: 125px;
   margin-top: 33px;
-  z-index: 1000;
+  z-index: 10;
   position: relative;
   background: white;
 }
 
-md-tabs.md-tabs-fixed {
-  position: relative !important;
-  md-tabs-wrapper {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    z-index: 1 !important;
-  }
+.operator-profile-content{
+  height: 81vh;
+  padding-bottom: 45px;
+}
+
+.operator-profile-tab-title{
+  padding: 10px;
+  font-size: 17px;
+}
+
+.operator-profile-about-container{
+  padding: 5px;
+  margin: 3px;
+  line-height: 18px;
+  margin-top: -10px;
+}
+
+.operator-profile-contact-phone{
+  margin-bottom: 15px;
+}
+
+.operator-branch-container{
+  margin-top: 20px;
+  padding: 10px 10px 0px 10px;
+  background-color: #ECECEC;
+  margin-bottom: 15px;
+}
+
+.operator-branch-location{
+  font-size: 17px;
+  padding-bottom: 10px;
+  color: #009901;
+}
+
+.operator-branch-address{
+  padding-bottom: 10px;
+}
+
+.button-view-operator-map{
+  margin-right: 0px;
+}
+
+.bottom-sheet-drop-off-point{
+  margin-top: 15px;
 }

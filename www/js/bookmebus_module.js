@@ -1,3 +1,3 @@
 angular.module("bookmebus", ["cordovaAngularEvent", "ngMaterial", "ngMessages",
                              "ui.router", "internationalPhoneNumber", "ngMdIcons",
-                             "ezfb", "angularMoment", "slick", "disableAll"]);
+                             "ezfb", "angularMoment", "slick", "disableAll", "uiGmapgoogle-maps"]);

@@ -28,6 +28,11 @@
         templateUrl: 'js/app/forget_password/forget_password.html',
         publicAccess: true
       })
+      .state('view_map',{
+        url: '/view_map',
+        templateUrl: 'js/app/shared/view_map.html',
+        publicAccess: false
+      })
       .state('ticket_search', {
         url: '/ticket_search',
         templateUrl: 'js/app/main/ticket_search/ticket_search.html',

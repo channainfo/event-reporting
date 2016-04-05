@@ -1,4 +1,4 @@
-<div layout="column" layout-fill>
+<div ng-controller="OperatorProfileController as operatorProfileCtrl" layout="column" layout-fill>
 
   <md-toolbar>
     <div class="md-toolbar-tools">
@@ -11,68 +11,70 @@
     </div>
   </md-toolbar>
 
-  <md-content>
+  <md-content class="operator-profile-content">
 
     <div class="operator-profile-header">
       <div class="dark-background"></div>
       <img src="img/operators/green-eagle-express.png" class="operator-profile-icon" />
     </div>
 
-    <md-tabs md-dynamic-height md-swipe-content md-stretch-tabs="auto">
-      <md-tab label="Home">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Tab One</h1>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-          <p>Tab One Content</p>
-        </md-content>
+    <md-tabs md-dynamic-height md-swipe-content md-stretch-tabs="always" class="operator-profile-tabs">
+      <md-tab>
+        <md-tab-label><ng-md-icon icon="home"></ng-md-icon></md-tab-label>
+        <md-tab-body>
+          <div class="bold-text operator-profile-tab-title">All Routes</div>
+          <md-list>
+            <search-result result="operatorProfileCtrl.operatorRoutes.result['data']"
+                           show-bottom-sheet="operatorProfileCtrl.showBottomSheet()"
+                           show-details="operatorProfileCtrl.showDetails()">
+            </search-result>
+          </md-list>
+        </md-tab-body>
       </md-tab>
-      <md-tab label="About">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Tab Two</h1>
-          <p>Tab Two Content</p>
-        </md-content>
+
+      <md-tab>
+        <md-tab-label><ng-md-icon icon="info"></ng-md-icon></md-tab-label>
+        <md-tab-body>
+          <div class="bold-text operator-profile-tab-title">About</div>
+          <div class="operator-profile-about-container">
+            <p>G-Express, also known as Green Eagle, is a small VAN company yet with reliable and comfortable service.
+            Ticket fare starts from USD 8.00. Green Eagle uses brand new Toyota Hiace to operate only route from Phnom Penh to Siem Reap and vice versa.
+            </p>
+
+            <div><ng-md-icon icon="email" size="20"></ng-md-icon> : info@gexpress.com</div>
+            <div class="operator-profile-contact-phone">
+              <ng-md-icon icon="phone" size="20"></ng-md-icon> : 023 537 8999, 096 537 8999
+            </div>
+
+            <div><b>Branches</b></div>
+            <div ng-repeat="branch in operatorProfileCtrl.branches">
+              <div md-whiteframe="2" class="operator-branch-container">
+                <div class="bold-text operator-branch-location">
+                  {{ branch.location }}
+                </div>
+                <div class="operator-branch-address">
+                  <b>Address: </b>{{ branch.address }}
+                </div>
+                <b>Tel: </b>{{ branch.tel }}
+
+                <div layout="row" layout-align="end center">
+                  <md-button ng-click="operatorProfileCtrl.viewMap()" class="button-view-operator-map">
+                    View map
+                  </md-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </md-tab-body>
       </md-tab>
-      <md-tab label="Review">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Tab Three</h1>
-          <p>Tab Three Content</p>
-        </md-content>
+
+      <md-tab>
+        <md-tab-label><ng-md-icon icon="star_border"></ng-md-icon></md-tab-label>
+        <md-tab-body>
+          <div class="bold-text operator-profile-tab-title">Reviews</div>
+          <div class="fb-comments" data-href="operatorProfileCtrl.fbCommentUrl" data-numposts="5">
+          </div>
+        </md-tab-body>
       </md-tab>
     </md-tabs>
 

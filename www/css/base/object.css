@@ -24,7 +24,7 @@
 }
 
 .dark-text{
-  color: #333;
+  color: black !important;
 }
 
 .toolbar-back-button{
