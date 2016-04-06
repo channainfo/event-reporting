@@ -51,3 +51,17 @@ md-list-item h4{
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+md-tabs.operator-profile-tabs md-tabs-wrapper{
+  position: fixed;
+  display: block;
+  bottom: 0;
+  left: 0px;
+  background-color: white !important;
+  z-index: 100;
+  width: 100%;
+}
+
+.angular-google-map-container {
+  height: 90vh;
+}

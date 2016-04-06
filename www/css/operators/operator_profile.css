@@ -1,0 +1,73 @@
+.operator-profile-header{
+  background: url("../../img/operators/operator_gallery.jpg") no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.dark-background{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.4;
+  z-index: 0;
+  position: absolute;
+}
+
+.operator-profile-icon{
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+  margin-top: 33px;
+  z-index: 10;
+  position: relative;
+  background: white;
+}
+
+.operator-profile-content{
+  height: 81vh;
+  padding-bottom: 45px;
+}
+
+.operator-profile-tab-title{
+  padding: 10px;
+  font-size: 17px;
+}
+
+.operator-profile-about-container{
+  padding: 5px;
+  margin: 3px;
+  line-height: 18px;
+  margin-top: -10px;
+}
+
+.operator-profile-contact-phone{
+  margin-bottom: 15px;
+}
+
+.operator-branch-container{
+  margin-top: 20px;
+  padding: 10px 10px 0px 10px;
+  background-color: #ECECEC;
+  margin-bottom: 15px;
+}
+
+.operator-branch-location{
+  font-size: 17px;
+  padding-bottom: 10px;
+  color: #009901;
+}
+
+.operator-branch-address{
+  padding-bottom: 10px;
+}
+
+.button-view-operator-map{
+  margin-right: 0px;
+}
+
+.bottom-sheet-drop-off-point{
+  margin-top: 15px;
+}

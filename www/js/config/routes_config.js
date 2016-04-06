@@ -28,6 +28,11 @@
         templateUrl: 'js/app/forget_password/forget_password.html',
         publicAccess: true
       })
+      .state('view_map',{
+        url: '/view_map',
+        templateUrl: 'js/app/shared/view_map.html',
+        publicAccess: false
+      })
       .state('ticket_search', {
         url: '/ticket_search',
         templateUrl: 'js/app/main/ticket_search/ticket_search.html',
@@ -56,6 +61,16 @@
       .state('request_ticket', {
         url: '/request_ticket',
         templateUrl: 'js/app/main/request_ticket/request_ticket.html',
+        publicAccess: false
+      })
+      .state('operators', {
+        url: '/operators',
+        templateUrl: 'js/app/main/operators/operators.html',
+        publicAccess: false
+      })
+      .state('operator_profile', {
+        url: '/operator_profile',
+        templateUrl: 'js/app/main/operators/operator_profile.html',
         publicAccess: false
       })
   }

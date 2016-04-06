@@ -24,11 +24,15 @@
     <link rel="stylesheet" href="css/select_seat/select_seat.css" />
     <link rel="stylesheet" href="css/passenger_detail/passenger_detail.css" />
     <link rel="stylesheet" href="css/request_ticket/request_ticket.css" />
-
+    <link rel="stylesheet" href="css/operators/operators.css" />
+    <link rel="stylesheet" href="css/operators/operator_profile.css" />
   </head>
 
   <body ng-cloak ng-controller='AppController as appCtrl' ng-init='appCtrl.init()'>
     <div ui-view > </div>
+
+    <!-- google-map-api -->
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBmTqS250gWOfaXFMUNRQ1xQrTUCID7wz4"></script>
 
     <!-- Lib -->
     <script type="text/javascript" src="cordova.js"></script>
@@ -43,6 +47,7 @@
     <!-- Angular Material requires Angular.js Libraries install with bower -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/lodash/dist/lodash.min.js"></script>
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
@@ -59,6 +64,8 @@
     <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
     <script src="bower_components/angular-slick/dist/slick.min.js"></script>
     <script src="bower_components/angular-disable-all/dist/angular-disable-all.min.js"></script>
+    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
 
     <!-- module -->
     <script type="text/javascript" src="js/cordova_angular_event.js"></script>
@@ -99,6 +106,7 @@
 
     <!-- Custom Javascript (module, service, controller, config) -->
 
+    <script type="text/javascript" src="js/app/shared/view_map_controller.js"></script>
     <script type="text/javascript" src="js/app/introduction/introduction_controller.js"></script>
     <script type="text/javascript" src="js/app/registration/registration_controller.js"></script>
     <script type="text/javascript" src="js/app/sign_in/sign_in_controller.js"></script>
@@ -111,6 +119,8 @@
     <script type="text/javascript" src="js/app/main/select_seat/select_seat_controller.js"></script>
     <script type="text/javascript" src="js/app/main/passenger_detail/passenger_detail_controller.js"></script>
     <script type="text/javascript" src="js/app/main/request_ticket/request_ticket_controller.js"></script>
+    <script type="text/javascript" src="js/app/main/operators/operators_controller.js"></script>
+    <script type="text/javascript" src="js/app/main/operators/operator_profile_controller.js"></script>
 
   </body>
 

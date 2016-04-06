@@ -24,7 +24,7 @@
 }
 
 .dark-text{
-  color: #333;
+  color: black !important;
 }
 
 .toolbar-back-button{
@@ -61,4 +61,12 @@
   background: rgb(0,153,1);
   position:fixed;
   top:0;
+}
+
+.grey-color{
+  color: grey;
+}
+
+.gold-color{
+  color: gold;
 }
