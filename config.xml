@@ -21,9 +21,15 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <icon src="www/img/app_icon/android/res/drawable-ldpi/Icon.png" density="ldpi" />
+        <icon src="www/img/app_icon/android/res/drawable-mdpi/Icon.png" density="mdpi" />
+        <icon src="www/img/app_icon/android/res/drawable-hdpi/Icon.png" density="hdpi" />
+        <icon src="www/img/app_icon/android/res/drawable-xdpi/Icon.png" density="xhdpi" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <icon src="www/img/app_icon/ios/icon/Icon.png" />
+        <icon src="www/img/app_icon/ios/icon/Icon@2x.png"/>
     </platform>
 </widget>
