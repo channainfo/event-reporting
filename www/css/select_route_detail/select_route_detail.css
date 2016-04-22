@@ -61,3 +61,7 @@
 .cancellation-container, .notice-container{
   padding: 10px;
 }
+
+.route-detail-dropoff-icon{
+  color: #45B864;
+}

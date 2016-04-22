@@ -1,50 +1,55 @@
-<div ng-controller="RegistrationController as registrationCtrl" class="animated fadeInDown">
-  <md-content>
-    <form name="signUpForm" role="form" class="signUpForm">
-      <div class="signup-input-background">
-        <md-input-container class="signup-input-container">
-          <input ng-model="registrationCtrl.user.email" type="email" class="signup-input" name="email" aria-label="Email" required>
-          <label class="signUpLabel">Enter your email address</label>
-          <span class="error" ng-show="registrationCtrl.fieldError('email')">
-            {{ registrationCtrl.fieldError('email') }}
-          </span>
-        </md-input-container>
+<div ng-controller="RegistrationController as registrationCtrl" flex layout="row" class="signup-container">
+  <md-content flex class="animated fadeInDown signup-content">
+    <md-card flex="35" class="signup-logo-container">
+        <img ng-src="img/bookme-app-logo-shadow@100x100.png">
+    </md-card>
 
-        <md-input-container class="signup-input-container">
-          <input ng-model="registrationCtrl.user.mobile_phone" type="text" international-phone-number default-country="kh" 
-                 class="signup-input" name="mobile" aria-label="Mobile Phone" required >
-        </md-input-container>
+    <form name="signUpForm" role="form" class="signup-form">
+      <div layout="row" layout-wrap>
+        <div flex="100">
+          <md-input-container class="signup-input-container">
+            <input ng-model="registrationCtrl.user.email" type="email" class="signup-input" name="email" aria-label="Email" required>
+            <label class="signup-input-placeholder-style">Enter your email address</label>
+            <span class="error" ng-show="registrationCtrl.fieldError('email')">
+              {{ registrationCtrl.fieldError('email') }}
+            </span>
+          </md-input-container>
+        </div>
 
-        <md-input-container class="signup-input-container">
-          <input ng-model="registrationCtrl.user.password" type="password" class="signup-input" name="password"
-                 aria-label="User Password" required >
-          <label class="signUpLabel">Password</label>
-          <span class="error" ng-show="registrationCtrl.fieldError('password')">
-            {{ registrationCtrl.fieldError('password') }}
-          </span>
+        <div flex="100">
+          <md-input-container class="signup-input-container">
+            <input ng-model="registrationCtrl.user.mobile_phone" type="text" international-phone-number default-country="kh"
+                   class="signup-input" name="mobile" aria-label="Mobile Phone" required >
+          </md-input-container>
+        </div>
 
-        </md-input-container>
+        <div flex="100">
+          <md-input-container class="signup-input-container">
+            <input ng-model="registrationCtrl.user.password" type="password" class="signup-input" name="password"
+                   aria-label="User Password" required >
+            <label class="signup-input-placeholder-style">Password</label>
+            <span class="error" ng-show="registrationCtrl.fieldError('password')">
+              {{ registrationCtrl.fieldError('password') }}
+            </span>
+          </md-input-container>
+        </div>
 
-      </div>
-      <div layout="column">
-        <md-button ng-click='registrationCtrl.signup()' class="md-raised md-primary bold-text white-text square-border" >
-          Register
-        </md-button>
+        <div flex="100" class="signup-button-container">
+          <md-button ng-click="registrationCtrl.signup()"
+                     class="md-raised md-primary md-hue-2 bold-text white-text square-border button-style button-signup-style">
+            Register
+          </md-button>
+
+          <md-button ng-hide="registrationCtrl.fbConnected()" ng-click="registrationCtrl.signupFb()"
+                     class="md-raised white-text bold-text square-border button-style button-signup-fb-style">
+            <ng-md-icon icon="facebook-box" class="fbIcon"></ng-md-icon> Register with Facebook
+          </md-button>
+
+          <div>
+            <p>Already member? <a ui-sref="sign_in" class="white-text">Sign in</a></p>
+          </div>
+        </div>
       </div>
     </form>
-
-    <div layout="column" class="signup-bottom-button">
-      <md-button ng-hide="registrationCtrl.fbConnected()" class="md-raised white-text bold-text btnSignUpViaFb square-border"
-                 ng-click="registrationCtrl.signupFb()">
-        <ng-md-icon icon="facebook-box" class="fbIcon"></ng-md-icon> Register with Facebook
-      </md-button>
-
-      <div class="signin-link">
-        Already member? 
-        <a ui-sref="sign_in" class="tag_a">
-          Sign in
-        </a>
-      </div>
-    </div>
   </md-content>
 </div>

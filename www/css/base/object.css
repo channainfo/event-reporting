@@ -19,7 +19,7 @@
 }
 
 .error{
-  color: red;
+  color: #B12A2A;
   font-size: 90%;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .toolbar-background{
-  background: rgb(0,153,1);
+  background: #03A9F4;
   position:fixed;
   top:0;
 }
@@ -69,4 +69,13 @@
 
 .gold-color{
   color: gold;
+}
+
+.text-box-style, .select-box-style{
+  font-size: 18px !important;
+}
+
+.button-style{
+  height: 50px;
+  font-size: 15px;
 }

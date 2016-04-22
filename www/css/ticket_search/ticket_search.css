@@ -24,12 +24,13 @@
 
 .search-ticket-swap-icon{
   color: grey;
+  margin-top: 15px;
 }
 
 .ticket-search-boarding-dropoff-line{
   border: 1px dashed grey;
   width: 0px;
-  height: 55px;
+  height: 83px;
   margin: 0 auto;
   margin-top: 3px;
   margin-bottom: 3px;
@@ -58,6 +59,10 @@
   margin-left: 2px;
 }
 
+.search-dropoff-icon .boarding-dropoff-icon{
+  color: #45B864;
+}
+
 .btn-search {
   width: 100%;
   margin-top: 20px;
@@ -80,4 +85,5 @@
 
 .ticket-search-destination {
   margin-bottom: 35px;
+  margin-top: 25px;
 }
