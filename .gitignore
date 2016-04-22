@@ -1,6 +1,6 @@
 
 platforms/*
-
+plugins/*
 *DS_Store
 
 www/bower_components/*
