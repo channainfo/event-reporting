@@ -1,5 +1,5 @@
 (function(){
-  var registrationController = function($state, Registration, FbConnect){
+  var registrationController = function($scope, $state, Registration, FbConnect){
     var self = this
     self.user = {}
     self.error = {}
@@ -16,11 +16,13 @@
     }
 
     this.fbConnectSuccess = function(fbData){
-      self.user = {}
-      self.user["email"] = fbData["email"]
-      self.user["fb_access_token"] = fbData["accessToken"]
-      self.user["first_name"] = fbData["first_name"]
-      self.user["last_name"] = fbData["last_name"]
+      $scope.$apply(function(){
+        self.user = {}
+        self.user["email"] = fbData["email"]
+        self.user["fb_access_token"] = fbData["accessToken"]
+        self.user["first_name"] = fbData["first_name"]
+        self.user["last_name"] = fbData["last_name"]
+      })
     }
 
     this.signup = function(){
@@ -45,5 +47,5 @@
   }
 
   angular.module('bookmebus')
-         .controller('RegistrationController', ['$state', 'Registration', 'FbConnect', registrationController])
+         .controller('RegistrationController', ['$scope', '$state', 'Registration', 'FbConnect', registrationController])
 })()
