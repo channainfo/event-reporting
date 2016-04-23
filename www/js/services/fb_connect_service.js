@@ -1,8 +1,9 @@
 (function(){
+  //
   var fbConnect = function(){
     return {
       fbData: function(success){
-        facebookConnectPlugin.login(["email"], function(res) {
+        facebookConnectPlugin.login(["email", "public_profile"], function(res) {
           if(res.authResponse) {
             var accessToken = res.authResponse.accessToken
             facebookConnectPlugin.api('/me', null,
@@ -17,7 +18,7 @@
       },
 
       fbToken: function(success){
-        facebookConnectPlugin.login(["public_profile"],
+        facebookConnectPlugin.login(["email"],
           function(){
             facebookConnectPlugin.getAccessToken(function(accessToken) {
               success(accessToken)

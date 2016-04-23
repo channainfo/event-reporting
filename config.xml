@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.bookmebus.bookmebus" version="0.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.bookmebus.bookmebus" version="0.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>BookMeBus</name>
     <description>
       Easiest way to find book bus ticket for your travel in Phnom Penh, Bangkok, Siem reap, Sihanoukville, Pakse, and Hochi minh.
@@ -30,7 +30,7 @@
         <splash density="land-hdpi" src="www/img/screen/android/drawable-hdpi/splash.png" />
         <splash density="land-ldpi" src="www/img/screen/android/drawable-ldpi/splash.png" />
         <splash density="land-mdpi" src="www/img/screen/android/drawable-mdpi/splash.png" />
-        <splash density="land-xhdpi" src="www/img/screen/android/drawable-xdpi/splash.png" />
+        <splash density="land-xhdpi" src="www/img/screen/android/drawable-xhdpi/splash.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -66,7 +66,8 @@
         <splash height="1136" src="www/img/screen/ios/Default-568h@2x.png" width="640" />
     </platform>
     <plugin name="cordova-plugin-splashscreen" spec="~3.2.1" />
-    <plugin name="phonegap-facebook-plugin" spec="https://github.com/Wizcorp/phonegap-facebook-plugin.git">
+    <engine name="ios" spec="~4.1.1" />
+    <plugin name="cordova-plugin-facebook4" spec="~1.7.0">
         <variable name="APP_ID" value="578057442333046" />
         <variable name="APP_NAME" value="staging.bookmebus.com" />
     </plugin>

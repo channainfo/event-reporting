@@ -2,6 +2,10 @@ window.appSettings = {
   clientId: 'b2b80d0180bdc504ac4f5927ef399b329343b99ac1f6a4022fbb6bca9cea7363',
   clientSecret: '63cb0911b9052443799cfe0d5e9f9c33b2a4d5975cc8b27db080b4225e82aa67',
 
+  fbAppId: '',
+  fbAppName: '',
+  fbVersion: 'v2.0',
+
   server: 'http://localhost:3000/',
   baseApi: 'http://localhost:3000/api/v1/',
 

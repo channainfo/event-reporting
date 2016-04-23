@@ -33,12 +33,15 @@
 
   <body ng-cloak ng-controller='AppController as appCtrl' ng-init='appCtrl.init()'>
     <div ui-view > </div>
+    <div id="fb-root"></div>
 
     <!-- google-map-api -->
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBmTqS250gWOfaXFMUNRQ1xQrTUCID7wz4"></script>
 
     <!-- Lib -->
     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/lib/facebookConnectPlugin.js"></script>
+
     <script type="text/javascript" src="js/lib/avocado.js"></script>
     <script type="text/javascript" src="js/lib/avocado/env.js"></script>
     <script type="text/javascript" src="js/lib/avocado/debug.js"></script>
@@ -46,6 +49,7 @@
     <script type="text/javascript" src="js/lib/avocado/date_time.js"></script>
     <script type="text/javascript" src="js/lib/avocado/day_interval.js"></script>
     <script type="text/javascript" src="js/lib/avocado/selectable_seat.js"></script>
+
 
     <!-- Angular Material requires Angular.js Libraries install with bower -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -122,6 +126,9 @@
     <script type="text/javascript" src="js/app/main/request_ticket/request_ticket_controller.js"></script>
     <script type="text/javascript" src="js/app/main/operators/operators_controller.js"></script>
     <script type="text/javascript" src="js/app/main/operators/operator_profile_controller.js"></script>
+
+    <!--TODO move up. it works only at bottom? -->
+    <script type="text/javascript" src="js/lib/cordova_platform.js"></script>
 
   </body>
 
