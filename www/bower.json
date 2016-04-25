@@ -25,7 +25,6 @@
     "angular-moment": "^0.10.3",
     "moment": "^2.11.2",
     "angular-slick": "^0.2.1",
-    "angular-disable-all": "^0.0.2",
-    "angular-google-maps": "^2.3.2"
+    "angular-disable-all": "^0.0.2"
   }
 }

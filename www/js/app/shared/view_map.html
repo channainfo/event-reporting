@@ -1,4 +1,4 @@
-<div layout="column" layout-fill ng-controller="ViewMapController as viewMapCtrl">
+<div layout="column" ng-controller="ViewMapController as viewMapCtrl">
   <md-toolbar>
     <div class="md-toolbar-tools">
       <a ui-sref="operator_profile" class="toolbar-back-button">
@@ -11,11 +11,6 @@
   </md-toolbar>
 
   <md-content>
-
-    <ui-gmap-google-map center='viewMapCtrl.map.center' zoom='viewMapCtrl.map.zoom'>
-      <ui-gmap-markers models="viewMapCtrl.marker" coords="'self'" icon="'icon'" options="viewMapCtrl.option">
-      </ui-gmap-markers>
-    </ui-gmap-google-map>
-
+    <div class="mapCanvas"></div>
   </md-content>
 </div>

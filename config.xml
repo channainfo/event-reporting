@@ -71,4 +71,8 @@
         <variable name="APP_ID" value="578057442333046" />
         <variable name="APP_NAME" value="staging.bookmebus.com" />
     </plugin>
+    <plugin name="plugin.google.maps" spec="~1.3.9">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyDJ9RwXBa3ualSWU-93M508fWwvaUspYH0" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyCP6oSRLPLauLBVmZ01-BGniuy_Af2bqBs" />
+    </plugin>
 </widget>
