@@ -1,42 +1,46 @@
-<div ng-controller="SignInController as signInCtrl" class="animated fadeInDown">
-  <md-content>
+<div ng-controller="SignInController as signInCtrl" flex layout="row" layout-fill class="signin-container">
+  <md-content class="animated fadeInDown signin-content" flex>
+    <md-card flex="35" class="signin-logo-container">
+        <img ng-src="img/bookme-app-logo-shadow@100x100.png">
+    </md-card>
+
     <form name="signInForm" role="form" class="signin-form">
-      <div class="signin-input-background">
-        <div class="av-flash"> </div>
+      <div layout="row" layout-wrap>
+        <div flex="100" class="av-flash"> </div>
 
-        <md-input-container class="signin-input-container">
-          <input ng-model="signInCtrl.user.username" class="av-flash-reset signin-input"
-                 type="email"  aria-label="signin-username">
-          <label>Enter your username</label>
-        </md-input-container>
+        <div flex="100">
+          <md-input-container class="signin-input-container">
+            <input ng-model="signInCtrl.user.username" class="av-flash-reset signin-input text-box-style"
+                   type="email" aria-label="signin-username">
+            <label class="signin-input-placeholder-style">Enter your username</label>
+          </md-input-container>
+        </div>
 
-        <md-input-container flex="100" class="signin-input-container">
-           <input ng-model="signInCtrl.user.password" class="av-flash-reset signin-input"
-                  type="password" aria-label="signin-password" autocomplete="off">
-           <label>Enter your Password</label>
-        </md-input-container>
-      </div>
+        <div flex="100" class="signin-password-container">
+          <md-input-container flex="100" class="signin-input-container">
+             <input ng-model="signInCtrl.user.password" class="av-flash-reset signin-input text-box-style"
+                    type="password" aria-label="signin-password" autocomplete="off">
+             <label class="signin-input-placeholder-style">Enter your Password</label>
+          </md-input-container>
+        </div>
 
-      <div layout="column">
-        <md-button ng-click="signInCtrl.signin()" class="md-raised md-primary bold-text white-text square-border btnSignIn">
-          LOGIN
-        </md-button>
+        <div flex="100" class="signin-button-container">
+          <md-button ng-click="signInCtrl.signin()"
+                     class="md-raised md-primary md-hue-2 bold-text white-text square-border button-style button-signin-style">
+            LOGIN
+          </md-button>
+
+          <md-button ng-click="signInCtrl.signInFb()"
+                     class="md-raised white-text bold-text square-border button-style button-signin-fb-style">
+            <ng-md-icon icon="facebook-box" class="fbIcon"></ng-md-icon> Sign in via Facebook
+          </md-button>
+
+          <div>
+            <p> Not here before? <a ui-sref="registration" class="white-text">Sign Up</a> </p>
+            <p>Could not log in ! <a ui-sref="forget_password" class="white-text">Lost your password?</a></p>
+          </div>
+        </div>
       </div>
     </form>
-
-    <div layout="column" class="signin-bottom-button">
-      <md-button ng-click="signInCtrl.signInFb()" class="md-raised white-text bold-text square-border button-signin-via-fb">
-        <ng-md-icon icon="facebook-box" class="fbIcon"></ng-md-icon> Sign in via Facebook
-      </md-button>
-
-      <div>
-        <p> Not here before? <a ui-sref="registration">Sign Up</a> </p>
-
-        <p>
-          Could not log in ! <a ui-sref="forget_password">Lost your password?</a>
-        </p>
-
-      </div>
-    </div>
   </md-content>
 </div>

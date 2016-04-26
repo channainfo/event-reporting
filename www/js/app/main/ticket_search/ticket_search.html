@@ -24,7 +24,7 @@
     <div flex="90" layout="row" layout-wrap class="ticket-search-input-container">
       <md-input-container class="ticket-search-origin">
         <label>Origin</label>
-        <md-select ng-model="search.params.from" md-on-open="search.loadOrigins()">
+        <md-select ng-model="search.params.from" md-on-open="search.loadOrigins()" class="select-box-style">
           <md-option ng-repeat="origin in search.origins" ng-value="origin.attributes['name']"
                      ng-disabled="search.params.to == origin.attributes['name']">
             {{ origin.attributes['name'] }}
@@ -33,12 +33,12 @@
       </md-input-container>
 
       <div ng-click='search.swapLocation()' class="search-ticket-swap-icon">
-        <ng-md-icon icon="swap_vertial_circle"></ng-md-icon>
+        <ng-md-icon icon="swap_vertial_circle" size="30"></ng-md-icon>
       </div>
 
       <md-input-container class="ticket-search-destination">
         <label>Destination</label>
-        <md-select ng-model="search.params.to" md-on-open="search.loadDestinations()">
+        <md-select ng-model="search.params.to" md-on-open="search.loadDestinations()" class="select-box-style">
           <md-option ng-repeat="destination in search.destinations" ng-value="destination.attributes['name']"
                      ng-disabled="search.params.from == destination.attributes['name']">
             {{ destination.attributes['name'] }}
@@ -52,12 +52,14 @@
     <div flex="100" class="ticket-search-date">
       <md-datepicker ng-model="search.params['on_date']"
                      md-min-date="search.config.minDate"
-                     md-placeholder="Enter date">
+                     md-placeholder="Enter date"
+                     class="search-ticket-datepicker">
       </md-datepicker>
     </div>
 
     <div flex="100" class="ticket-search-button">
-      <md-button ng-click="search.findTickets()" class="md-raised md-primary white-text bold-text btn-search">
+      <md-button ng-click="search.findTickets()"
+                 class="md-raised md-primary md-hue-2 white-text bold-text button-style btn-search">
         <ng-md-icon icon="search" class="white-text"></ng-md-icon>Find Tickets
       </md-button>
     </div>

@@ -65,3 +65,7 @@ md-tabs.operator-profile-tabs md-tabs-wrapper{
 .angular-google-map-container {
   height: 90vh;
 }
+
+.search-ticket-datepicker .md-datepicker-input{
+  font-size: 18px;
+}
