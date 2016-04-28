@@ -8,14 +8,14 @@
         Http.request({
           method: 'POST',
           data: report,
-          url: 'reports/'
+          url: 'volunteer_event/'
         }, success, failed)
       },
       all: function(success, failed) {
         Http.request({
           method: 'GET',
           data: {},
-          url: 'reports/_search'
+          url: 'volunteer_event/_search'
         }, function(response) {
            console.log("data: ", response.data)
             success(response.data.hits)
