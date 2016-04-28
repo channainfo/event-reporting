@@ -1,5 +1,5 @@
 (function(){
-  var reportController = function($stateParams, ReportService){
+  var reportController = function($stateParams, $mdDialog, ReportService){
 
     this.flags = ["Child", "Pregnant Women", "Same Household", "Animal Deadths"]
     this.durationTypes = ["Hours", "Days", "Weeks"]
@@ -33,14 +33,28 @@
       console.log("saving: ", this.record)
       ReportService.create(this.record, function(response){
         console.log("suces", response)
+        self.showAlert()
         self.resetRecord()
       }, function(response) {
         console.log('failed', response)
       })
     }
 
+    this.showAlert = function() {
+      $mdDialog.show(
+        $mdDialog.alert()
+          .parent(angular.element(document.querySelector('body')))
+          .clickOutsideToClose(true)
+          .title('Report Submitted')
+          .textContent('Your report has been submitted successfully. Thanks you')
+          .ariaLabel('Event Reporting')
+          .ok('Got it!')
+          .targetEvent()
+      );
+    }
+
   }
 
   angular.module('reporting_module')
-         .controller('ReportController', ['$stateParams',  'ReportService', reportController])
+         .controller('ReportController', ['$stateParams', '$mdDialog', 'ReportService', reportController])
 })()
