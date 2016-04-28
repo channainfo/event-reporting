@@ -7,5 +7,3 @@ www/bower_components/*
 www/node_modules/*
 www/js/dist/*
 node_modules/*
-
-www/js/app_settings.js
