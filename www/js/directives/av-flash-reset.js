@@ -9,6 +9,6 @@
       }
     }
   }
-  angular.module('bookmebus').directive('avFlashReset', ['Flash', avFlashReset])
+  angular.module('reporting_module').directive('avFlashReset', ['Flash', avFlashReset])
 
 })()

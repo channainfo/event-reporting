@@ -69,3 +69,23 @@ md-tabs.operator-profile-tabs md-tabs-wrapper{
 .search-ticket-datepicker .md-datepicker-input{
   font-size: 18px;
 }
+
+form md-datepicker {
+    position: relative;
+    left: -16px;
+}
+
+form md-datepicker .md-datepicker-input-container{
+  margin-left: 0;
+}
+form md-datepicker .md-datepicker-button.md-icon-button {
+  margin-right: 0;
+}
+
+md-input-container {
+  margin: 6px 0px !important;
+}
+
+.md-inline-form md-checkbox {
+    margin: 10px 0 8px !important;
+}

@@ -1,8 +1,8 @@
 (function(){
-  angular.module('bookmebus')
+  angular.module('reporting_module')
          .factory('ApiConfig', function(){
             return{
-              HOST: window.appSettings.server,
+              SERVER: window.appSettings.server,
               BASE_API: window.appSettings.baseApi,
               CLIENT_ID: window.appSettings.clientId,
               CLIENT_SECRET: window.appSettings.clientSecret,
@@ -13,12 +13,9 @@
 
               OPERATOR_ALLOW_SEAT_SELECTION: window.appSettings.operatorAllowSeatSelection,
 
-              apiUrl: function(path){
-                return this.BASE_API + path
+              serverUrl: function(path){
+                return this.SERVER + path
               },
-              authUrl: function(path){
-                return this.HOST + "oauth/token"
-              }
 
             }
          })

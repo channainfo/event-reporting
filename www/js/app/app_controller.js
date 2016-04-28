@@ -1,18 +1,12 @@
 (function(){
-  var appController = function(AccessToken, Location, Store, Flash) {
+  var appController = function($stateParams, Store, Flash) {
     var self = this
+    this.phoneNumber = $stateParams['phone_number']
 
     this.init = function(){
-      avocado.debug.log("initializing...")
-      avocado.debug.log("authorizing app ...")
-      AccessToken.setAppToken(function(oauthToken){
-        avocado.debug.log("auth token:", oauthToken)
-        self.preload()
-      })
     }
 
     this.preload = function() {
-      Location.load()
     }
 
     this.clearFlash = function() {
@@ -20,6 +14,6 @@
     }
 
   }
-  angular.module("bookmebus")
-         .controller("AppController", ["AccessToken", "Location", "Store", "Flash", appController])
+  angular.module("reporting_module")
+         .controller("AppController", [ "$stateParams", "Store", "Flash", appController])
 })()

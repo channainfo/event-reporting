@@ -15,6 +15,6 @@
                       })
   }
 
-  angular.module('bookmebus')
+  angular.module('reporting_module')
          .config(['$mdThemingProvider', themeProvider]);
 })()

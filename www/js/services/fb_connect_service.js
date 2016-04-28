@@ -30,6 +30,6 @@
   }
 
   angular
-    .module('bookmebus')
+    .module('reporting_module')
     .factory('FbConnect', fbConnect)
 })()

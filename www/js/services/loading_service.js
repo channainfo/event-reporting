@@ -1,5 +1,5 @@
 (function(){
-  angular.module('bookmebus')
+  angular.module('reporting_module')
          .factory('Loading', function(){
             return{
               isVisible: false,

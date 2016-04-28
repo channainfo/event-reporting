@@ -3,9 +3,9 @@
     $urlRouterProvider.otherwise("/");
 
     $stateProvider
-      .state('main', {
-        url: "/",
-        templateUrl: "js/app/main/main.html",
+      .state('search', {
+        url: '/search',
+        templateUrl: 'js/app/main/search/search.html',
         publicAccess: false
       })
       .state('introduction', {
@@ -13,68 +13,18 @@
         templateUrl: "js/app/introduction/introduction.html",
         publicAccess: true
       })
-      .state('registration', {
-        url: "/registration",
-        templateUrl: "js/app/registration/registration.html",
-        publicAccess: true
-      })
-      .state('sign_in', {
-        url: "/sign_in",
-        templateUrl: "js/app/sign_in/sign_in.html",
-        publicAccess: true
-      })
-      .state('forget_password', {
-        url: '/forget_password',
-        templateUrl: 'js/app/forget_password/forget_password.html',
-        publicAccess: true
-      })
-      .state('view_map',{
-        url: '/view_map',
-        templateUrl: 'js/app/shared/view_map.html',
+      .state('inbox', {
+        url: '/inbox/:phone_number',
+        templateUrl: 'js/app/main/inbox/inbox.html',
         publicAccess: false
       })
-      .state('ticket_search', {
-        url: '/ticket_search',
-        templateUrl: 'js/app/main/ticket_search/ticket_search.html',
-        publicAccess: false
-      })
-      .state('search_result', {
-        url: '/search_result',
-        templateUrl: 'js/app/main/search_result/search_result.html',
-        publicAccess: false
-      })
-      .state('select_route_detail', {
-        url: '/select_route_detail',
-        templateUrl: 'js/app/main/select_route_detail/select_route_detail.html',
-        publicAccess: false
-      })
-      .state('select_seat', {
-        url: '/select_seat',
-        templateUrl: 'js/app/main/select_seat/select_seat.html',
-        publicAccess: false
-      })
-      .state('passenger_detail', {
-        url: '/passenger_detail',
-        templateUrl: 'js/app/main/passenger_detail/passenger_detail.html',
-        publicAccess: false
-      })
-      .state('request_ticket', {
-        url: '/request_ticket',
-        templateUrl: 'js/app/main/request_ticket/request_ticket.html',
-        publicAccess: false
-      })
-      .state('operators', {
-        url: '/operators',
-        templateUrl: 'js/app/main/operators/operators.html',
-        publicAccess: false
-      })
-      .state('operator_profile', {
-        url: '/operator_profile',
-        templateUrl: 'js/app/main/operators/operator_profile.html',
+      .state('main', {
+        url: "/:phone_number",
+        templateUrl: "js/app/main/main.html",
         publicAccess: false
       })
   }
 
-  angular.module('bookmebus')
+  angular.module('reporting_module')
          .config(['$stateProvider', '$urlRouterProvider', routerConfig ]);
 })()

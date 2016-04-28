@@ -7,14 +7,14 @@
         <md-button class="md-icon-button" aria-label="Menu" ng-click="mainCtrl.toggleSidenav('navigationMenu')">
           <ng-md-icon icon="menu" class="white-text"></ng-md-icon>
         </md-button>
-        <div class="white-text">BookmeBus</div>
+        <div class="white-text">Event Report</div>
         <span flex></span>
-        <a ui-sref="ticket_search"><ng-md-icon icon="search" class="white-text"></ng-md-icon></a>
+        <a ui-sref="search"><ng-md-icon icon="search" class="white-text"></ng-md-icon></a>
       </div>
     </md-toolbar>
 
     <md-content>
-      <div ui-view>
+      <div ng-include src="'js/app/main/main_form_content.html'" >
       </div>
     </md-content>
   </div>

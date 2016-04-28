@@ -4,33 +4,12 @@
 
   <md-content flex>
     <md-list>
-      <md-list-item md-ink-ripple>
-        <a ui-sref="operators" class="dark-text">Bus Operators</a>
+
+      <md-list-item md-ink-ripple ui-sref="inbox(({phone_number: appCtrl.phoneNumber}))">
+        <p>Inbox</p>
       </md-list-item>
-      <md-list-item md-ink-ripple>
-        <a ui-sref='sign_in' class="dark-text">Sign In</a>
-      </md-list-item>
-      <md-list-item md-ink-ripple>
-        <a ui-sref='main.my_account'class="dark-text">My Account</a>
-      </md-list-item>
-      <md-list-item md-ink-ripple>
-        <a class="dark-text">Reschedule Ticket</a>
-      </md-list-item>
-      <md-list-item md-ink-ripple>
-        <a ui-sref='main.coupon' class="dark-text">Coupon</a>
-      </md-list-item>
-      <md-list-item md-ink-ripple>
-        <a class="dark-text">Referral Earning</a>
-      </md-list-item>
-      <md-list-item md-ink-ripple>
-        <a class="dark-text">FAQs</a>
-      </md-list-item>
-      <md-list-item md-ink-ripple>
-        <a class="dark-text">About Us</a>
-      </md-list-item>
-      <md-list-item md-ink-ripple>
-        <a ng-click="mainCtrl.signOut()" class="dark-text">Sign Out</a>
-      </md-list-item>
+
+
     </md-list>
   </md-content>
 </md-sidenav>

@@ -1,5 +1,5 @@
 (function(){
-  var mainController = function($state, $mdSidenav, Session){
+  var mainController = function($state, $mdSidenav){
 
     this.signOut = function(){
       Session.destroy()
@@ -12,6 +12,6 @@
   }
 
   angular
-    .module('bookmebus')
-    .controller('MainController',['$state', '$mdSidenav', 'Session', mainController])
+    .module('reporting_module')
+    .controller('MainController',['$state', '$mdSidenav', mainController])
 })()

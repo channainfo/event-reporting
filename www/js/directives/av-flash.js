@@ -9,6 +9,6 @@
       }
     }
   }
-  angular.module('bookmebus').directive('avFlash', ['Flash', avFlash])
+  angular.module('reporting_module').directive('avFlash', ['Flash', avFlash])
 
 })()

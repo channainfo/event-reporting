@@ -1,12 +1,8 @@
 (function(){
-  var introController = function($state, UserToken){
-    this.accessTicket = function(){
-      UserToken.setAppVisited()
-      $state.go('main')
-    }
+  var introController = function($state){
   }
 
   angular
-    .module('bookmebus')
-    .controller('IntroductionController', ['$state', 'UserToken', introController])
+    .module('reporting_module')
+    .controller('IntroductionController', ['$state', introController])
 })()

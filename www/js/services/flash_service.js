@@ -1,5 +1,5 @@
 (function(){
-  angular.module('bookmebus')
+  angular.module('reporting_module')
          .factory('Flash', function(){
             return{
               show: false,

@@ -8,6 +8,6 @@
       }
     }
   }
-  angular.module('bookmebus').directive('avLoading', ['Loading', avLoading])
+  angular.module('reporting_module').directive('avLoading', ['Loading', avLoading])
 
 })()

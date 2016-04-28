@@ -1,0 +1,83 @@
+<div layout="column" ng-cloak class="md-inline-form" ng-controller='ReportController as report'>
+  <md-content layout-padding>
+    <div>
+      <form name="reportForm">
+        <h1 class="md-title">Event Base Report</h1>
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block">
+            <label>Message</label>
+            <textarea ng-model="report.record.message"
+                      required
+                      md-maxlength="250" rows="5" md-select-on-focus>
+            </textarea>
+          </md-input-container>
+        </div>
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block">
+            <label>Place</label>
+            <textarea ng-model="report.record.place"
+                      required
+                      md-maxlength="250" rows="5" md-select-on-focus>
+            </textarea>
+          </md-input-container>
+        </div>
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block">
+            <label>Number of cases</label>
+            <input type='number' ng-model="report.record.number_case" md-select-on-focus>
+            </textarea>
+          </md-input-container>
+        </div>
+
+        <div layout-gt-sm="row">
+          <label style='margin-right: 20px; color: rgba(0,0,0,0.26);'>Onset Date</label>
+          <md-datepicker ng-model="report.record.on_set_date" md-placeholder="On Set Date"></md-datepicker>
+        </div>
+
+        <div layout-gt-sm="row">
+          <div layout="row">
+            <md-input-container style="margin-right: 15px;">
+              <label>Duration</label>
+              <input ng-model='report.record.duration' type="number" required>
+            </md-input-container>
+
+            <md-input-container>
+              <label>Type</label>
+              <md-select ng-model="report.record['duration_type']" required>
+                <md-option ng-repeat="durationType in report.durationTypes"
+                           value="{{durationType}}">
+                  {{durationType}}
+                </md-option>
+              </md-select>
+              <div class="validation-messages" ng-messages="reportForm.record['duration_type'].$error">
+                <div ng-message="required">This date is required!</div>
+              </div>
+            </md-input-container>
+          </div>
+        </div>
+
+        <div layout-gt-sm="row">
+          <md-input-container >
+            <div class="demo-select-all-checkboxes" flex="100" ng-repeat="flag in report.flags">
+                <md-checkbox ng-checked="report.exists(flag)" ng-click='report.markFlag($index)'>
+                 {{ flag }}
+                </md-checkbox>
+              </div>
+          </md-input-container>
+
+          <div layout="column">
+            <md-button
+                       ng-disabled="reportForm.$invalid"
+                       ng-click='report.save()'
+                       class="md-raised md-primary md-hue-2 bold-text white-text square-border button-style button-signup-style">
+              Submit Report
+            </md-button>
+        </div>
+
+        </div>
+      </form>
+    </div>
+  </md-content>
+</div>

@@ -1,5 +1,5 @@
 (function(){
-  angular.module('bookmebus')
+  angular.module('reporting_module')
          .factory('Store', function(){
             return{
               set: function(name, value){
