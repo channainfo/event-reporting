@@ -1,7 +1,7 @@
 (function(){
   var reportController = function($stateParams, ReportService){
 
-    this.flags = ["Child", "Pregnant Women", "Same Household", "Animal Deadths"]
+    this.flags = ["Child", "Pregnant Woman", "Same Household", "Animal Deaths"]
     this.durationTypes = ["Hours", "Days", "Weeks"]
 
     this.resetRecord = function() {
