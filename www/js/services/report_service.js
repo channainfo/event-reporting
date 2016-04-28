@@ -12,10 +12,15 @@
         }, success, failed)
       },
       all: function(success, failed) {
-        http.request({
+        Http.request({
           method: 'GET',
           data: {},
           url: 'reports/_search'
+        }, function(response) {
+           console.log("data: ", response.data)
+            success(response.data.hits)
+        }, function(response){
+            failed(response.data)
         })
       }
     }

@@ -1,5 +1,5 @@
 (function(){
-  var http = function(ApiConfig, $http, Store){
+  var http = function(ApiConfig, $http){
     return {
       request: function(params, success, failed){
         var options = {
@@ -22,6 +22,6 @@
   }
 
   angular.module('reporting_module')
-         .factory('Http', ['ApiConfig', '$http', 'Store', http ])
+         .factory('Http', ['ApiConfig', '$http', http ])
 
 })()

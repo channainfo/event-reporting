@@ -14,10 +14,6 @@
   margin-right: 15px;
 }
 
-.square-border{
-  border-radius: 0px;
-}
-
 .error{
   color: #B12A2A;
   font-size: 90%;
@@ -83,4 +79,10 @@
 .mapCanvas{
   width:100%;
   height:90vh;
+}
+
+.required-label {
+  font-size: 80%;
+  font-weight: bold;
+  color: red;
 }

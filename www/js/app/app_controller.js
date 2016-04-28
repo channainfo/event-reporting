@@ -1,5 +1,5 @@
 (function(){
-  var appController = function($stateParams, Store, Flash) {
+  var appController = function($stateParams) {
     var self = this
     this.phoneNumber = $stateParams['phone_number']
 
@@ -9,11 +9,7 @@
     this.preload = function() {
     }
 
-    this.clearFlash = function() {
-      Flash.reset()
-    }
-
   }
   angular.module("reporting_module")
-         .controller("AppController", [ "$stateParams", "Store", "Flash", appController])
+         .controller("AppController", [ "$stateParams", appController])
 })()

@@ -1,26 +1,41 @@
-<div ng-controller="SearchController as search">
+<div ng-controller='SearchController as searchCtrl' flex layout="row" ng-init='searchCtrl.init()'>
 
-  <md-toolbar>
-    <div class="md-toolbar-tools">
-      <a ui-sref="main" class="toolbar-back-button">
-        <ng-md-icon icon="chevron_left" size="35px" class="white-text"></ng-md-icon>
-      </a>
-      <div class="white-text">
-        Search Report
+  <div flex layout="column">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <a ui-sref="main" class="toolbar-back-button">
+          <ng-md-icon icon="chevron_left" size="35px" class="white-text"></ng-md-icon>
+        </a>
+        <div class="white-text">
+          Search Report
+        </div>
       </div>
-    </div>
-  </md-toolbar>
+    </md-toolbar>
 
-  <div flex layout="row" layout-padding layout-wrap layout-align="center start">
+    <md-content>
 
-    
+      <md-list flex>
+        <md-divider ></md-divider>
+        <md-subheader class="md-no-sticky">Event Based report({{searchCtrl.records['total']}})</md-subheader>
 
-    <div flex="100" class="ticket-search-button">
-      <md-button ng-click="search.findTickets()"
-                 class="md-raised md-primary md-hue-2 white-text bold-text button-style btn-search">
-        <ng-md-icon icon="search" class="white-text"></ng-md-icon>Find Tickets
-      </md-button>
-    </div>
+        <md-list-item ng-repeat="record in searchCtrl.records['hits']" class="md-2-line">
+          <md-icon>email</md-icon>
+
+          <div class="md-list-item-text">
+            <h3>
+              <a href="tel://{{ record['_source']['phone_number'] }}"> {{ record['_source']['phone_number'] }}</a>
+            </h3>
+            <p> {{ record['_source']['message'] }} </p>
+          </div>
+
+        </md-list-item>
+      </md-list>
+
+
+
+
+    </md-content>
   </div>
+
 
 </div>

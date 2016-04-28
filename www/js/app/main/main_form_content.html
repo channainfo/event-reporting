@@ -5,7 +5,7 @@
         <h1 class="md-title">Event Base Report</h1>
         <div layout-gt-sm="row">
           <md-input-container class="md-block">
-            <label>Message</label>
+            <label>Message<sup class="required-label">*</sup></label>
             <textarea ng-model="report.record.message"
                       required
                       md-maxlength="250" rows="5" md-select-on-focus>
@@ -17,7 +17,6 @@
           <md-input-container class="md-block">
             <label>Place</label>
             <textarea ng-model="report.record.place"
-                      required
                       md-maxlength="250" rows="5" md-select-on-focus>
             </textarea>
           </md-input-container>
@@ -40,12 +39,12 @@
           <div layout="row">
             <md-input-container style="margin-right: 15px;">
               <label>Duration</label>
-              <input ng-model='report.record.duration' type="number" required>
+              <input ng-model='report.record.duration' type="number">
             </md-input-container>
 
             <md-input-container>
               <label>Type</label>
-              <md-select ng-model="report.record['duration_type']" required>
+              <md-select ng-model="report.record['duration_type']">
                 <md-option ng-repeat="durationType in report.durationTypes"
                            value="{{durationType}}">
                   {{durationType}}

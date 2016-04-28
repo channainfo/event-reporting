@@ -4,10 +4,14 @@
     this.flags = ["Child", "Pregnant Women", "Same Household", "Animal Deadths"]
     this.durationTypes = ["Hours", "Days", "Weeks"]
 
-    this.record = { message: '',
+    this.resetRecord = function() {
+      this.record = { message: '',
                     flags: [],
                     on_set_date: new Date()
                   }
+    }
+
+    this.resetRecord()
 
     this.record['phone_number'] = $stateParams['phone_number']
     var self = this
@@ -29,6 +33,7 @@
       console.log("saving: ", this.record)
       ReportService.create(this.record, function(response){
         console.log("suces", response)
+        self.resetRecord()
       }, function(response) {
         console.log('failed', response)
       })
