@@ -7,7 +7,7 @@
             <label>Message<sup class="required-label">*</sup></label>
             <textarea ng-model="report.record.message"
                       required
-                      md-maxlength="250" rows="5" md-select-on-focus>
+                      rows="5" md-select-on-focus>
             </textarea>
           </md-input-container>
         </div>
@@ -16,7 +16,7 @@
           <md-input-container class="md-block">
             <label>Place</label>
             <textarea ng-model="report.record.place"
-                      md-maxlength="250" rows="5" md-select-on-focus>
+                      rows="5" md-select-on-focus>
             </textarea>
           </md-input-container>
         </div>
@@ -25,7 +25,6 @@
           <md-input-container class="md-block">
             <label>Number of cases</label>
             <input type='number' ng-model="report.record.number_case" md-select-on-focus>
-            </textarea>
           </md-input-container>
         </div>
 
@@ -41,6 +40,7 @@
               <input ng-model='report.record.duration' type="number">
             </md-input-container>
 
+            <br />
             <md-input-container>
               <label>Type</label>
               <md-select ng-model="report.record['duration_type']">

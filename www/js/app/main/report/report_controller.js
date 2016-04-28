@@ -45,7 +45,7 @@
         $mdDialog.alert()
           .parent(angular.element(document.querySelector('body')))
           .clickOutsideToClose(true)
-          .title('Report Submitted')
+          .title('Event Reporting')
           .textContent('Your report has been submitted successfully. Thanks you')
           .ariaLabel('Event Reporting')
           .ok('Got it!')
